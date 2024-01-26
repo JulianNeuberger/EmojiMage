@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vl7u0555dfc2"]
+
+[ext_resource type="Script" path="res://PlayerInputs/PlayerTriggerHandler.gd" id="1_av732"]
+
+[node name="PlayerTriggerHandler" type="Node2D"]
+script = ExtResource("1_av732")
