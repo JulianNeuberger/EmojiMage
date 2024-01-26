@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="1_cdj7a"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="2_x70bi"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="3_flcvx"]
-[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar.tscn" id="4_ljriu"]
+[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="4_ljriu"]
 
 [node name="Level" type="Node2D"]
 

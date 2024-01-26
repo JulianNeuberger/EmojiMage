@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmddgc4p4tad2"]
 
-[ext_resource type="Script" path="res://HealthBar.gd" id="1_46mfb"]
+[ext_resource type="Script" path="res://HealthBar/HealthBar.gd" id="1_2654w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g82pf"]
 bg_color = Color(0.737255, 0.305882, 0.188235, 1)
@@ -17,4 +17,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_g82pf")
 step = 1.0
 value = 60.0
 show_percentage = false
-script = ExtResource("1_46mfb")
+script = ExtResource("1_2654w")
