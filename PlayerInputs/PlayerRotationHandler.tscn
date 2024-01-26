@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mxr10d1iunr0"]
+
+[ext_resource type="Script" path="res://PlayerInputs/PlayerRotationHandler.gd" id="1_cvhem"]
+
+[node name="PlayerRotationHandler" type="Node2D"]
+script = ExtResource("1_cvhem")
