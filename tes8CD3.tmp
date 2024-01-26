@@ -10,15 +10,7 @@ position = Vector2(926, 98)
 [node name="FollowBehavior" parent="Node2D" index="3" node_paths=PackedStringArray("target")]
 target = NodePath("../../Node2D2")
 
-[node name="KeepDistanceBehavior" parent="Node2D" index="4" node_paths=PackedStringArray("target", "movement")]
-target = NodePath("../../Node2D2")
-movement = NodePath("../EnemyMovement")
-
 [node name="Node2D2" parent="." instance=ExtResource("1_cdnrs")]
 position = Vector2(928, 265)
 
-[node name="KeepDistanceBehavior" parent="Node2D2" index="4" node_paths=PackedStringArray("movement")]
-movement = NodePath("../EnemyMovement")
-
 [editable path="Node2D"]
-[editable path="Node2D2"]
