@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://7yju2kfshk56"]
+
+[ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
+[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
+[ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
+size = Vector2(4, 652)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_81a6n"]
+
+[sub_resource type="Resource" id="Resource_qc6ed"]
+script = ExtResource("3_v1hms")
+enemy = ExtResource("2_ycsx4")
+amount = 5
+delay = 1.5
+
+[node name="Testbed" type="Node2D"]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+position = Vector2(0, 327)
+shape = SubResource("RectangleShape2D_uwml0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall"]
+position = Vector2(0, 326)
+scale = Vector2(-4.5, 651)
+texture = SubResource("CanvasTexture_81a6n")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(1153, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(0, 327)
+shape = SubResource("RectangleShape2D_uwml0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall2"]
+position = Vector2(0, 326)
+scale = Vector2(-4.5, 651)
+texture = SubResource("CanvasTexture_81a6n")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(-3, -2)
+rotation = -1.5708
+scale = Vector2(1, 1.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+position = Vector2(0, 327)
+shape = SubResource("RectangleShape2D_uwml0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall3"]
+position = Vector2(0, 326)
+scale = Vector2(-4.5, 651)
+texture = SubResource("CanvasTexture_81a6n")
+
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(-3, 648)
+rotation = -1.5708
+scale = Vector2(1, 1.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(0, 327)
+shape = SubResource("RectangleShape2D_uwml0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall4"]
+position = Vector2(0, 326)
+scale = Vector2(-4.5, 651)
+texture = SubResource("CanvasTexture_81a6n")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+position = Vector2(564, 298)
+script = ExtResource("1_b78jq")
+enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed")])
