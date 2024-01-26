@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by5awb2fb57hl"]
+
+[ext_resource type="Script" path="res://PlayerInputs/PlayerMovementHandler.gd" id="1_7hvhd"]
+
+[node name="PlayerMovementHandler" type="Node2D"]
+script = ExtResource("1_7hvhd")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba5dp3ku8dh6q"]
+
+[ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="1_cdj7a"]
+[ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="2_x70bi"]
+[ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="3_flcvx"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Wizard" parent="." instance=ExtResource("1_cdj7a")]
+position = Vector2(600, 375)
+
+[node name="PlayerMovementHandler" parent="Wizard" instance=ExtResource("2_x70bi")]
+
+[node name="PlayerRotationHandler" parent="Wizard" instance=ExtResource("3_flcvx")]
