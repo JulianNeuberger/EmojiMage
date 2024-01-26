@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=8 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
@@ -14,6 +14,12 @@ script = ExtResource("3_v1hms")
 enemy = ExtResource("2_ycsx4")
 amount = 5
 delay = 1.5
+
+[sub_resource type="Resource" id="Resource_47ci0"]
+script = ExtResource("3_v1hms")
+enemy = ExtResource("2_ycsx4")
+amount = 10
+delay = 0.1
 
 [node name="Testbed" type="Node2D"]
 
@@ -73,4 +79,4 @@ texture = SubResource("CanvasTexture_81a6n")
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(564, 298)
 script = ExtResource("1_b78jq")
-enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed")])
+enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), SubResource("Resource_47ci0")])

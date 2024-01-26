@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b07md1ppnowaj"]
+
+[ext_resource type="PackedScene" uid="uid://bnq16ndu6jwlv" path="res://HitAndHurtBox/HitBox.tscn" id="1_eq8f7"]
+[ext_resource type="Script" path="res://bullet/Bullet.gd" id="1_qorbx"]
+[ext_resource type="Texture2D" uid="uid://cypji13qwvmi" path="res://bullet/bullet.png" id="2_d03fa"]
+[ext_resource type="PackedScene" uid="uid://drsvqudv3u2cl" path="res://ConstantVelocity/ConstantVelocityComponent.tscn" id="4_otfnj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hris"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvu2a"]
+radius = 15.0333
+
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_qorbx")
+
+[node name="HitBox" parent="." instance=ExtResource("1_eq8f7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_2hris")
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_d03fa")
+
+[node name="BulletCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cvu2a")
+
+[node name="ConstantVelocityComponent" parent="." instance=ExtResource("4_otfnj")]
