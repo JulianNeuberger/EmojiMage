@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://HitAndHurtBox/HurtBox.gd" id="1_hexqv"]
 
 [node name="HurtBox" type="Area2D"]
+collision_layer = 256
+collision_mask = 512
 script = ExtResource("1_hexqv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
