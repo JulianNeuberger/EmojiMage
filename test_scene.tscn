@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://54hylo5xyn88"]
+
+[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="1_cdnrs"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_cdnrs")]
+position = Vector2(926, 98)
+
+[node name="FollowBehavior" parent="Node2D" index="3" node_paths=PackedStringArray("target")]
+target = NodePath("../../Node2D2")
+
+[node name="Node2D2" parent="." instance=ExtResource("1_cdnrs")]
+position = Vector2(928, 265)
+
+[editable path="Node2D"]

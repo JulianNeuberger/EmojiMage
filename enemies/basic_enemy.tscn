@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://40mhhmhiflb6"]
+
+[ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
+[ext_resource type="Script" path="res://enemies/enemy_movement.gd" id="2_r0u5n"]
+[ext_resource type="Script" path="res://enemies/follow_behavior.gd" id="3_8krj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
+
+[node name="Basic Enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_da2xf")
+
+[node name="EnemyMovement" type="Node2D" parent="."]
+script = ExtResource("2_r0u5n")
+target = Vector2(200, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.10543e-15, 1)
+rotation = 3.14159
+scale = Vector2(1.57483, -1.68531)
+shape = SubResource("CircleShape2D_mipyo")
+
+[node name="FollowBehavior" type="Node" parent="." node_paths=PackedStringArray("movement")]
+script = ExtResource("3_8krj1")
+movement = NodePath("../EnemyMovement")
