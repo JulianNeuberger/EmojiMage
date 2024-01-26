@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=9 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
+[ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
 size = Vector2(4, 652)
@@ -80,3 +81,8 @@ texture = SubResource("CanvasTexture_81a6n")
 position = Vector2(564, 298)
 script = ExtResource("1_b78jq")
 enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), SubResource("Resource_47ci0")])
+
+[node name="Wizard" parent="." instance=ExtResource("4_exd3k")]
+position = Vector2(519, 299)
+
+[node name="Camera2D" type="Camera2D" parent="Wizard"]

@@ -20,15 +20,19 @@ func kill_enemy(enemy: EnemyBehavior):
 	enemy.queue_free()
 	_num_alive -= 1
 	if _num_alive == 0:
+		print("All enemies killed in level!")
 		on_all_killed.emit()
 
 
 func spawn_enemies():
+	var player = get_tree().get_nodes_in_group("player")[0]
+	
 	for enemy_spawn in enemy_spawns:
 		for i in range(enemy_spawn.amount):
 			var enemy: EnemyBehavior = enemy_spawn.enemy.instantiate()
 			enemy.global_position = random_global_spawn_point()
 			enemy.connect("on_death", func(): kill_enemy(enemy))
+			enemy.set_target(player)
 			get_parent().add_child.call_deferred(enemy)
 			_num_alive += 1
 			await get_tree().create_timer(enemy_spawn.delay).timeout
