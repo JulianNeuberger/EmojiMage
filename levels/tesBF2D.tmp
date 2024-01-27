@@ -12,8 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
 [ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="7_1ycik"]
 [ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
-[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="9_sgpnb"]
-[ext_resource type="PackedScene" uid="uid://dvwd7khp2hng2" path="res://HealthBar/HeathAdapter.tscn" id="10_4v2lf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
 size = Vector2(4, 652)
@@ -131,22 +129,6 @@ layout_mode = 2
 layout_mode = 1
 
 [node name="BuiltInHandler" parent="CanvasLayer" instance=ExtResource("7_3q20r")]
-
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("9_sgpnb")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -419.0
-offset_top = 20.0
-offset_right = 419.0
-offset_bottom = 94.0
-grow_vertical = 1
-value = 100.0
-can_turn_invisible = false
-
-[node name="HeathAdapter" parent="CanvasLayer/HealthBar" node_paths=PackedStringArray("health_bar") instance=ExtResource("10_4v2lf")]
-health_bar = NodePath("..")
 
 [connection signal="toggle" from="CanvasLayer/GuiToggle" to="CanvasLayer/PauseGame" method="set_pause"]
 [connection signal="close_gui" from="CanvasLayer/GuiToggle/PauseGui" to="CanvasLayer/GuiToggle" method="close"]
