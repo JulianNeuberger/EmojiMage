@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://vl7u0555dfc2" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
-[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="8_avsfe"]
-[ext_resource type="PackedScene" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
+[ext_resource type="PackedScene" uid="uid://bjemk50juvq6c" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 [ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
+[ext_resource type="Resource" uid="uid://s1bitkymyxg4" path="res://Wand/HandWand.tres" id="10_8gpsv"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
@@ -41,7 +41,7 @@ triggers_per_second = 10
 [node name="PlayerInventoryHandler" parent="." instance=ExtResource("8_b4w4o")]
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
-_wand_resource = ExtResource("8_avsfe")
+_wand_resource = ExtResource("10_8gpsv")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("9_4lcvr")
