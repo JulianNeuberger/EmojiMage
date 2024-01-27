@@ -103,6 +103,8 @@ inventory_right={
 2d_physics/layer_8="Bullet"
 2d_physics/layer_9="HurtBox"
 2d_physics/layer_10="HitBox"
+2d_physics/layer_11="EnemyHurtBox"
+2d_physics/layer_12="EnemyHitBox"
 
 [rendering]
 

@@ -34,6 +34,11 @@ func trigger_bullet_spawn():
 func spawn_bullet():
 	for i in range(bullets_per_shot):
 		var node: Bullet = bullet_prototype.instantiate()
+		if "Enemy" in get_groups():
+			node.set_layer("EnemyHitBox", true)
+		else:
+			node.set_layer("HitBox", true)
+				
 		node.set_bullet_speed(bullet_resource.speed + rng.randf_range(-bullet_speed_variance, bullet_speed_variance))
 		node.set_bullet_resource(bullet_resource)
 		var spread = rng.randf_range(-bullet_spread, bullet_spread)

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_gf4u5"]
-[ext_resource type="PackedScene" uid="uid://vl7u0555dfc2" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
+[ext_resource type="PackedScene" uid="uid://du1oylx7ued42" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
 [ext_resource type="PackedScene" uid="uid://bjemk50juvq6c" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
