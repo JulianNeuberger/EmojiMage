@@ -16,7 +16,7 @@ func _ready():
 func damage(damage_amount: float):
 	current_health -= damage_amount
 	update_percentage()
-	if current_health == 0.0:
+	if current_health <= 0.0:
 		on_death.emit(self)
 
 
