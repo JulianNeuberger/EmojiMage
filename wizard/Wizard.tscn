@@ -1,16 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=13 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Texture2D" uid="uid://dlxc70y6ry15" path="res://wizard/Wizard.png" id="1_4ougy"]
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_gf4u5"]
-[ext_resource type="PackedScene" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
+[ext_resource type="PackedScene" uid="uid://du1oylx7ued42" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
-[ext_resource type="PackedScene" uid="uid://bjemk50juvq6c" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
+[ext_resource type="PackedScene" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 [ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
-[ext_resource type="Resource" path="res://Wand/HandWand.tres" id="10_8gpsv"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
@@ -42,7 +41,6 @@ triggers_per_second = 10
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
 position = Vector2(30, 30)
-_wand_resource = ExtResource("10_8gpsv")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("9_4lcvr")
