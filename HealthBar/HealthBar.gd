@@ -1,5 +1,5 @@
 extends ProgressBar
-class_name HealthBar
+class_name HealthBar 
 
 @export var can_turn_invisible = true
 

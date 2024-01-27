@@ -15,8 +15,7 @@ func _process(delta):
 	if target == null:
 		return
 	var tar_position = target.global_position
-	
-	movement.target = tar_position
+	movement.set_target(tar_position)
 
 func can_make_transition(current_state):
 	return true

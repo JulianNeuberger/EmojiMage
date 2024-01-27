@@ -12,6 +12,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
 
 [node name="Basic Enemy" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_mfs7k")
 
 [node name="Behaviors" type="Node" parent="."]
@@ -29,7 +30,7 @@ texture = ExtResource("1_da2xf")
 
 [node name="EnemyMovement" type="Node2D" parent="."]
 script = ExtResource("2_r0u5n")
-target = Vector2(200, 200)
+movement_per_sec = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.10543e-15, 1)
@@ -41,12 +42,16 @@ shape = SubResource("CircleShape2D_mipyo")
 script = ExtResource("4_2tfas")
 
 [node name="HurtBox" parent="." instance=ExtResource("6_eiel0")]
+collision_layer = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-7.10543e-15, 1)
 rotation = 3.14159
 scale = Vector2(1.57483, -1.68531)
 shape = SubResource("CircleShape2D_mipyo")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
 
 [node name="HealthBar" parent="." instance=ExtResource("8_3fifs")]
 offset_left = -15.0
