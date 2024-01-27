@@ -9,3 +9,4 @@ speed = 400.0
 time_to_life = 3.0
 time_to_life_variance = 0.0
 sprite = ExtResource("2_f4kyd")
+damage = 10.0

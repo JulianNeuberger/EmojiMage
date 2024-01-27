@@ -19,11 +19,13 @@ func _ready():
 	timer.set_wait_time(bullet_resource.time_to_life + timeout_variance)
 	timer.start()
 
+func get_damage() -> float:
+	return bullet_resource.damage
+
 func _process(delta):
 	move_and_slide()
 
 func on_bullet_hit(target: HurtBox):
-	print("hit")
 	#animation
 	queue_free()
 
@@ -33,6 +35,7 @@ func set_start_direction(start_direction: Vector2):
 
 func set_bullet_resource(bullet_resource:BulletResource):
 	self.bullet_resource = bullet_resource
+	$HitBox.on_hit = get_damage
 
 func set_bullet_speed(speed: float):
 	$ConstantVelocityComponent.speed = speed
