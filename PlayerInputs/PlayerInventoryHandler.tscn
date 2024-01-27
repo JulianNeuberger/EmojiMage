@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjemk50juvq6c"]
+[gd_scene load_steps=2 format=3 uid="uid://imxtb574uttf"]
 
 [ext_resource type="Script" path="res://PlayerInputs/PlayerInventoryHandler.gd" id="1_21xts"]
 
