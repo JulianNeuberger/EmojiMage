@@ -53,6 +53,7 @@ text = "Exit
 "
 
 [node name="GuiToggle" parent="CanvasLayer" instance=ExtResource("3_kqct5")]
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="AdminTerminal" parent="CanvasLayer/GuiToggle" instance=ExtResource("3_0h1vq")]
