@@ -5,7 +5,8 @@ extends Node2D
 
 
 func _ready():
-	set_wand_resorce(wand_resource)
+	if wand_resource:
+		set_wand_resorce(wand_resource)
 
 
 func set_wand_resorce(wand_resource: WandResource):

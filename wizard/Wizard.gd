@@ -8,7 +8,7 @@ func _ready():
 	inventory.init()
 	$PlayerInventoryHandler.connect("inventory_left", inventory.scroll_slot_left)
 	$PlayerInventoryHandler.connect("inventory_right", inventory.scroll_slot_right)
-	inventory.connect("slot_changed", func(_slot_index, slot_value): $Wand.wand_resource = slot_value)
+	inventory.connect("slot_changed", func(_slot_index, slot_value): $Wand.set_wand_resorce(slot_value))
 
 func _process(delta):
 	velocity *= movement_parameters.movement_speed

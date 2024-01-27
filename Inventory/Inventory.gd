@@ -1,7 +1,7 @@
 extends Resource
 class_name Inventory
 
-@export var slots: Array[WandResource]
+@export var slots: Array[WandResource] = []
 @export var max_slots: int = 3
 
 signal slot_changed(active_slot: int, slot_value: WandResource)
@@ -34,4 +34,4 @@ func select_slot(slot_index: int):
 		printerr("Trying to set inventory slot with index %d, which is greater than the number of slots (%d)" % [slot_index, len(slots)])
 		return
 	active_slot = slot_index
-	slot_changed.emit(active_slot)
+	slot_changed.emit(active_slot, slots[active_slot])
