@@ -23,24 +23,11 @@ func _ready():
 
 func _process(delta):
 	for child in $Behaviors.get_children():
-		#if child.classname == 'shoot':
-			#child.set_process(true)
-		#else:
-			#child.set_process(false)
 		if child.can_make_transition(state):
 			state = child
 			child.set_process(true)
 		else:
 			child.set_process(false)
-		
-		#if is_disabled and not child.is_processing() and start_time + change_interval_miliseconds <= Time.get_ticks_msec():
-			#child.set_process(true)
-			#is_disabled = false
-			#
-		#elif not is_disabled:
-			#child.set_process(false)
-			#is_disabled = true
-			#start_time = Time.get_ticks_msec()
 	
 func set_target(target: Node2D):
 	for child in $Behaviors.get_children():

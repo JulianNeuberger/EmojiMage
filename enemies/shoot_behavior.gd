@@ -4,7 +4,7 @@ class_name ShootBehavior
 
 @export var target: Node2D
 @export var movement: EnemyMovement
-@export var shooting_distance: float = 100
+@export var shooting_distance: float = 300
 
 @export var bullet_spawner: Node
 
@@ -22,7 +22,6 @@ func _process(delta):
 	if bullet_spawner == null:
 		return
 	
-	bullet_spawner.can_shoot = true
 	bullet_spawner.trigger_bullet_spawn()
 
 func can_make_transition(current_state):
