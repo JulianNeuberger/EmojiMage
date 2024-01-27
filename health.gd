@@ -31,3 +31,4 @@ func serialize() -> Dictionary:
 
 func deserialize(resource: Dictionary):
 	current_health = resource["current_health"]
+	update_percentage()

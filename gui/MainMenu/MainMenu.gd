@@ -12,13 +12,13 @@ func _ready():
 
 func _on_start_pressed():
 	game_saver.delete_game()
-	get_tree().change_scene_to_file("res://levels/testbed.tscn")
+	get_tree().change_scene_to_file("res://levels/Level1/Level1.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://levels/testbed.tscn")
+	get_tree().change_scene_to_file("res://levels/Level1/Level1.tscn")
 
 func grab_gui_focus():
 	if game_saver:
