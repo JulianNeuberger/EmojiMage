@@ -54,6 +54,7 @@ position = Vector2(519, 299)
 inventory = SubResource("Resource_7xwms")
 
 [node name="Camera2D" type="Camera2D" parent="Wizard"]
+zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -11,7 +11,6 @@ radius = 15.0333
 
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 128
-collision_mask = 0
 script = ExtResource("1_qorbx")
 start_direction = Vector2(1, 2.08165e-12)
 
