@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=26 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbvf5r7satm3" path="res://levels/GrantRewardComponent.tscn" id="19_xuund"]
 [ext_resource type="PackedScene" uid="uid://d0nokkb8aiycw" path="res://levels/LevelChangeComponent.tscn" id="20_b5d45"]
 [ext_resource type="PackedScene" uid="uid://bcppc16nfrh8d" path="res://gui/MainMenu/MainMenu.tscn" id="21_y0jxn"]
+[ext_resource type="PackedScene" uid="uid://dv611cflna2ek" path="res://levels/GameOverChangeComponent.tscn" id="22_oefml"]
 
 [sub_resource type="Resource" id="Resource_n5d00"]
 script = ExtResource("3_v1hms")
@@ -110,6 +111,9 @@ wand_reward = ExtResource("8_fu3e2")
 
 [node name="LevelChangeComponent" parent="." instance=ExtResource("20_b5d45")]
 next_scene = ExtResource("21_y0jxn")
+
+[node name="GameOverChangeComponent" parent="." instance=ExtResource("22_oefml")]
+game_over_scene = ExtResource("21_y0jxn")
 
 [connection signal="on_all_killed" from="EnemySpawner" to="GrantRewardComponent" method="grant_reward"]
 [connection signal="on_all_killed" from="EnemySpawner" to="LevelChangeComponent" method="change_scene"]
