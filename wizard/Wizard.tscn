@@ -30,6 +30,6 @@ triggers_per_second = 10
 [node name="PlayerRotationHandler" parent="." instance=ExtResource("8_jam5k")]
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
-wand_resource = ExtResource("8_avsfe")
+_wand_resource = ExtResource("8_avsfe")
 
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]
