@@ -8,7 +8,7 @@
 [node name="ShootingEnemy" instance=ExtResource("1_7jbie")]
 
 [node name="KeepDistanceBehavior" parent="Behaviors" index="0"]
-shooting_distance = 200.0
+shooting_distance = 100.0
 
 [node name="ShootBehavior" type="Node" parent="Behaviors" index="1" node_paths=PackedStringArray("movement", "bullet_spawner")]
 script = ExtResource("2_6fp3k")
