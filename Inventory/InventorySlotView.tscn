@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b85ehdtahl4fs"]
+
+[ext_resource type="Script" path="res://Inventory/InventorySlotView.gd" id="1_0j2b8"]
+[ext_resource type="Texture2D" uid="uid://cd7mfklae3uca" path="res://Inventory/inventory_slot_background.png" id="1_w2x2r"]
+[ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="2_eyp86"]
+[ext_resource type="Texture2D" uid="uid://bybq5jf5xlnlu" path="res://Inventory/inventory_slot_background_active.png" id="3_g7su5"]
+
+[node name="InventorySlotView" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0j2b8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_w2x2r")
+
+[node name="BackgroundActive" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_g7su5")
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_eyp86")
