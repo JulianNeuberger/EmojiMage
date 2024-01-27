@@ -31,7 +31,10 @@ layout_mode = 2
 texture = ExtResource("1_65guv")
 
 [node name="Continue" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 2.08165e-12)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
 
 [node name="Start" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(80, 2.08165e-12)

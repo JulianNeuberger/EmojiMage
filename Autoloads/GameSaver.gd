@@ -33,4 +33,4 @@ func delete_game():
 	DirAccess.remove_absolute("user://savegame.save")
 
 func has_save() -> bool:
-	return DirAccess.dir_exists_absolute("user://savegame.save")
+	return FileAccess.file_exists("user://savegame.save")

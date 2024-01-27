@@ -12,7 +12,6 @@ func _ready():
 	else:
 		continue_button.visible = false
 		start_button.grab_focus()
-	
 
 func _on_start_pressed():
 	game_saver.delete_game()
