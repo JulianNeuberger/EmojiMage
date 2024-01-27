@@ -4,7 +4,7 @@ class_name Inventory
 @export var slots: Array[WandResource]
 @export var max_slots: int = 3
 
-signal slot_changed(active_slot: int)
+signal slot_changed(active_slot: int, slot_value: WandResource)
 signal inventory_changed(inventory: Inventory)
 
 var active_slot: int = 0
