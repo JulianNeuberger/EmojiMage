@@ -14,10 +14,13 @@
 script = ExtResource("1_mfs7k")
 
 [node name="Behaviors" type="Node" parent="."]
-script = ExtResource("2_x73yf")
 
 [node name="FollowBehavior" type="Node" parent="Behaviors" node_paths=PackedStringArray("movement")]
 script = ExtResource("3_8krj1")
+movement = NodePath("../../EnemyMovement")
+
+[node name="KeepDistanceBehavior" type="Node" parent="Behaviors" node_paths=PackedStringArray("movement")]
+script = ExtResource("2_x73yf")
 movement = NodePath("../../EnemyMovement")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

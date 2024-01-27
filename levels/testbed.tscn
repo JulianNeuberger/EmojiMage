@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=10 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
+[ext_resource type="PackedScene" uid="uid://c37uaabrvavc0" path="res://Inventory/InventoryView.tscn" id="5_8b30p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
 size = Vector2(4, 652)
@@ -86,3 +87,23 @@ enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), Sub
 position = Vector2(519, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Wizard"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="InventoryView" parent="CanvasLayer/MarginContainer" instance=ExtResource("5_8b30p")]
+layout_mode = 2
