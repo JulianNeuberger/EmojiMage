@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=11 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Texture2D" uid="uid://dlxc70y6ry15" path="res://wizard/Wizard.png" id="1_4ougy"]
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
 [ext_resource type="Resource" uid="uid://18kdukj4wgjo" path="res://Wand/ShotgunWand.tres" id="8_avsfe"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
+[ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
 radius = 28.0179
@@ -31,5 +32,8 @@ triggers_per_second = 10
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
 wand_resource = ExtResource("8_avsfe")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("9_4lcvr")
 
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]
