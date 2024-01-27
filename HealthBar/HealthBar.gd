@@ -7,4 +7,8 @@ func _ready():
 	
 func set_percentage(value: int):
 	self.value = value
-	visible = value != 100
+	if value == 100 or value == 0:
+		visible = false
+	else:
+		visible = true
+	
