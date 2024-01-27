@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BulletResource" load_steps=3 format=3 uid="uid://bw0axmgp1nvuy"]
+[gd_resource type="Resource" script_class="BulletResource" load_steps=3 format=3 uid="uid://75ok0vxei6d5"]
 
 [ext_resource type="Script" path="res://bullet/BulletResource.gd" id="1_5wlwm"]
 [ext_resource type="Texture2D" uid="uid://dwqhkrf4vdi7" path="res://bullet/hand_bullet.png" id="2_bxaq1"]
@@ -9,3 +9,4 @@ speed = 1200.0
 time_to_life = 3.0
 time_to_life_variance = 0.1
 sprite = ExtResource("2_bxaq1")
+damage = 10.0

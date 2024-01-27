@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcppc16nfrh8d"]
+[gd_scene load_steps=6 format=3 uid="uid://bcppc16nfrh8d"]
 
 [ext_resource type="Texture2D" uid="uid://do0rahvxndj06" path="res://gui/MainMenu/Logo.png" id="1_65guv"]
 [ext_resource type="Script" path="res://gui/MainMenu/MainMenu.gd" id="1_f1kpf"]
+[ext_resource type="PackedScene" uid="uid://sevmmo1nmpks" path="res://gui/AdminTerminal/AdminTerminal.tscn" id="3_0h1vq"]
+[ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="3_kqct5"]
+[ext_resource type="PackedScene" uid="uid://ct4udox2r2r15" path="res://PlayerInputs/PlayerMainMenuHandler.tscn" id="5_wghs4"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_f1kpf")
@@ -30,6 +33,12 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("1_65guv")
 
+[node name="Continue" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
+
 [node name="Start" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(80, 2.08165e-12)
 layout_mode = 2
@@ -43,5 +52,27 @@ size_flags_horizontal = 4
 text = "Exit
 "
 
+[node name="GuiToggle" parent="CanvasLayer" instance=ExtResource("3_kqct5")]
+metadata/_edit_use_anchors_ = true
+
+[node name="AdminTerminal" parent="CanvasLayer/GuiToggle" instance=ExtResource("3_0h1vq")]
+custom_minimum_size = Vector2(1000, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = -80.0
+offset_right = 500.0
+offset_bottom = -40.0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerMainMenuHandler" parent="." instance=ExtResource("5_wghs4")]
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggle" from="CanvasLayer/GuiToggle" to="." method="_on_gui_toggle_toggle"]
+[connection signal="toggle_admin_panel" from="PlayerMainMenuHandler" to="CanvasLayer/GuiToggle" method="toggle_gui"]

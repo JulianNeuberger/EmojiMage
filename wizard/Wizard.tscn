@@ -1,31 +1,83 @@
-[gd_scene load_steps=13 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=20 format=3 uid="uid://xmuma7eni4"]
 
-[ext_resource type="Texture2D" uid="uid://dlxc70y6ry15" path="res://wizard/Wizard.png" id="1_4ougy"]
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_gf4u5"]
+[ext_resource type="Texture2D" uid="uid://cdpt54yos0did" path="res://wizard/wizard_sprite.png" id="4_k87nx"]
 [ext_resource type="PackedScene" uid="uid://du1oylx7ued42" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
 [ext_resource type="PackedScene" uid="uid://imxtb574uttf" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 [ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
+[ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="11_twput"]
+[ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="12_c5st4"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
 slots = Array[Resource("res://Wand/WandResource.gd")]([])
 max_slots = 3
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_si4m8"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp8yl"]
+atlas = ExtResource("4_k87nx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jsj2"]
+atlas = ExtResource("4_k87nx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyuba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp8yl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jsj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
-radius = 28.0179
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihppc"]
+radius = 28.0
 
 [node name="Wizard" type="CharacterBody2D" groups=["player", "saveable"]]
 script = ExtResource("1_ppgnw")
 movement_parameters = ExtResource("2_uwvth")
 inventory = SubResource("Resource_s7won")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4ougy")
+[node name="StepParticles" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_si4m8")
+emitting = false
+amount = 128
+explosiveness = 0.19
+texture = ExtResource("12_c5st4")
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.21
+initial_velocity_max = 10.21
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.57079
+sprite_frames = SubResource("SpriteFrames_iyuba")
+autoplay = "default"
+frame_progress = 0.294461
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tejw6")
@@ -34,6 +86,7 @@ shape = SubResource("CircleShape2D_tejw6")
 triggers_per_second = 10
 
 [node name="PlayerMovementHandler" parent="." instance=ExtResource("7_7d58m")]
+step_interval_seconds = 0.25
 
 [node name="PlayerRotationHandler" parent="." instance=ExtResource("8_jam5k")]
 
@@ -45,4 +98,11 @@ position = Vector2(30, 30)
 [node name="Health" type="Node" parent="."]
 script = ExtResource("9_4lcvr")
 
+[node name="HurtBox" parent="." instance=ExtResource("11_twput")]
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_ihppc")
+
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]
+[connection signal="trigger" from="HurtBox" to="Health" method="damage"]

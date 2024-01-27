@@ -9,3 +9,4 @@ speed = 500.0
 time_to_life = 0.5
 time_to_life_variance = 0.2
 sprite = ExtResource("2_i2kc8")
+damage = 8.0
