@@ -20,6 +20,12 @@ func add_to_inventory(weapon_behavior: WandResource):
 	slots.push_back(weapon_behavior)
 	inventory_changed.emit(self)
 
+func scroll_slot_left():
+	select_slot((active_slot + len(slots) - 1) % len(slots))
+	
+func scroll_slot_right():
+	select_slot((active_slot + 1) % len(slots))
+
 func select_slot(slot_index: int):
 	if slot_index < 0:
 		printerr("Trying to set inventory slot with index < 0")

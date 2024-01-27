@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wkav8ts6g4a" path="res://Utils/PauseGame.tscn" id="5_jj0yu"]
 [ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="5_qy06p"]
 [ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
-[ext_resource type="PackedScene" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
+[ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
 size = Vector2(4, 652)
