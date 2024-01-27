@@ -4,7 +4,7 @@ class_name Bullet
 @export var damage: int = 1
 @export var start_direction: Vector2
 @export var bullet_resource: BulletResource
-@export var time_to_life: int = 3
+var rng = RandomNumberGenerator.new()
 
 
 func _ready():
@@ -13,9 +13,9 @@ func _ready():
 	set_bullet_resource(bullet_resource)
 	var timer = Timer.new()
 	self.add_child(timer)
-	
 	timer.timeout.connect(queue_free)
-	timer.set_wait_time(time_to_life)
+	var timeout_variance = rng.randfn(-bullet_resource.time_to_life_variance, bullet_resource.time_to_life_variance)
+	timer.set_wait_time(bullet_resource.time_to_life + timeout_variance)
 	timer.start()
 
 func _process(delta):
@@ -31,4 +31,6 @@ func set_start_direction(start_direction: Vector2):
 
 func set_bullet_resource(bullet_resource:BulletResource):
 	self.bullet_resource = bullet_resource
-	$ConstantVelocityComponent.speed = bullet_resource.speed
+
+func set_bullet_speed(speed: float):
+	$ConstantVelocityComponent.speed = speed
