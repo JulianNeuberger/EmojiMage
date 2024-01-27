@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
-[ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
-
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
@@ -13,9 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="5_qy06p"]
 [ext_resource type="Resource" uid="uid://bc88g3b5f0yd5" path="res://Wand/DefaultWand.tres" id="6_kwedf"]
 [ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
-[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="7_1ycik"]
-[ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
-[ext_resource type="Resource" uid="uid://ktp05k2sat2q" path="res://Wand/HandWand.tres" id="8_fu3e2"]
+[ext_resource type="Resource" uid="uid://18kdukj4wgjo" path="res://Wand/ShotgunWand.tres" id="7_1ycik"]
+[ext_resource type="PackedScene" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="9_sgpnb"]
 [ext_resource type="PackedScene" uid="uid://cgqqflee25ey0" path="res://HealthBar/HeathAdapter.tscn" id="10_4v2lf"]
 
@@ -38,11 +35,10 @@ delay = 0.3
 
 [sub_resource type="Resource" id="Resource_7xwms"]
 script = ExtResource("5_71yym")
-slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("6_kwedf"), ExtResource("7_1ycik"), ExtResource("8_fu3e2")])
+slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("6_kwedf"), ExtResource("7_1ycik"), null])
 max_slots = 3
 
 [node name="Testbed" type="Node2D"]
-script = ExtResource("1_wc5e3")
 
 [node name="Walls" type="Node2D" parent="."]
 

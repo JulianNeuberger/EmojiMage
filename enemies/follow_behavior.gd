@@ -4,6 +4,7 @@ class_name FollowBehavior
 
 @export var target: Node2D
 @export var movement: EnemyMovement
+var classname: String = "follow"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,5 +17,6 @@ func _process(delta):
 	var tar_position = target.global_position
 	
 	movement.target = tar_position
-	
-	 
+
+func can_make_transition(current_state):
+	return true

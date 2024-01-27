@@ -38,3 +38,18 @@ func set_bullet_speed(speed: float):
 
 func set_bullet_sprite():
 	bullet_sprite.texture = bullet_resource.sprite
+	
+func set_layer(name, value):
+	var hitbox = $HitBox
+	if name == "EnemyHitBox":
+		hitbox.set_collision_layer_value(12, value)
+		hitbox.set_collision_layer_value(10, !value)
+		
+		hitbox.set_collision_mask_value(11, value)
+		hitbox.set_collision_mask_value(9, !value)
+	else:
+		hitbox.set_collision_layer_value(12, !value)
+		hitbox.set_collision_layer_value(10, value)
+		
+		hitbox.set_collision_mask_value(11, !value)
+		hitbox.set_collision_mask_value(9, value)
