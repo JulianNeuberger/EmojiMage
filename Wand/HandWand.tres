@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="WandResource" load_steps=4 format=3 uid="uid://s1bitkymyxg4"]
+[gd_resource type="Resource" script_class="WandResource" load_steps=4 format=3 uid="uid://ktp05k2sat2q"]
 
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="1_oh7ou"]
-[ext_resource type="Resource" uid="uid://bw0axmgp1nvuy" path="res://bullet/HandBullet.tres" id="1_rcxes"]
+[ext_resource type="Resource" path="res://bullet/HandBullet.tres" id="1_rcxes"]
 [ext_resource type="Texture2D" uid="uid://dkgdobfo7yt5a" path="res://Wand/wand_2.png" id="2_1cxwy"]
 
 [resource]
 script = ExtResource("1_oh7ou")
+name = "HandWand"
 shots_per_second = 10.0
 bullet_spread = 0.1
 bullet_resource = ExtResource("1_rcxes")
-bullets_per_shot = 3
+bullets_per_shot = 1
 bullet_speed_variance = 50
 sprite = ExtResource("2_1cxwy")

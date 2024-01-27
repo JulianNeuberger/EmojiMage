@@ -20,7 +20,7 @@ max_slots = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
 radius = 28.0179
 
-[node name="Wizard" type="CharacterBody2D" groups=["player"]]
+[node name="Wizard" type="CharacterBody2D" groups=["player", "saveable"]]
 script = ExtResource("1_ppgnw")
 movement_parameters = ExtResource("2_uwvth")
 inventory = SubResource("Resource_s7won")
@@ -41,6 +41,7 @@ triggers_per_second = 10
 [node name="PlayerInventoryHandler" parent="." instance=ExtResource("8_b4w4o")]
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
+position = Vector2(30, 30)
 _wand_resource = ExtResource("10_8gpsv")
 
 [node name="Health" type="Node" parent="."]

@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_xi0os")
 speed = 400.0
-time_to_life = 0.0
+time_to_life = 2.0
 time_to_life_variance = 0.0
 sprite = ExtResource("2_w78iy")
