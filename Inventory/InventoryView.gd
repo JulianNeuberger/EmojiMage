@@ -8,7 +8,7 @@ func _ready():
 	var player: Wizard = get_tree().get_nodes_in_group("player")[0]
 	player.inventory.connect("inventory_changed", _update_with_inventory)
 	_update_with_inventory(player.inventory)
-	player.inventory.connect("slot_changed", _set_active_slot)
+	player.inventory.connect("slot_changed", func(slot_index, _slot): _set_active_slot(slot_index))
 	_set_active_slot(player.inventory.active_slot)
 
 func _update_with_inventory(inventory: Inventory):
