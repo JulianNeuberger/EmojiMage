@@ -1,6 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
+[ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
@@ -39,6 +40,7 @@ slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("6_kwedf"), E
 max_slots = 3
 
 [node name="Testbed" type="Node2D"]
+script = ExtResource("1_wc5e3")
 
 [node name="Walls" type="Node2D" parent="."]
 
