@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="BulletResource" load_steps=2 format=3 uid="uid://df47o10gagxa"]
+[gd_resource type="Resource" script_class="BulletResource" load_steps=2 format=3 uid="uid://c5nee4ekw8xoh"]
 
 [ext_resource type="Script" path="res://bullet/BulletResource.gd" id="1_xi0os"]
 
 [resource]
 script = ExtResource("1_xi0os")
 speed = 400.0
+time_to_life = 0.0
+time_to_life_variance = 0.0

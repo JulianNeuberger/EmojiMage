@@ -1,9 +1,9 @@
 extends Node
-class_name HeathAdapter
+class_name HealthAdapter
 
 
-var health: Health
 @export var health_bar: HealthBar
+var health: Health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
