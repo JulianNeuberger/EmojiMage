@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=20 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
@@ -8,8 +8,73 @@
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_3fifs"]
+[ext_resource type="Texture2D" uid="uid://b38nctpj8gxrb" path="res://enemies/Rollemy.png" id="9_cecxc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e18p"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bwmj"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu3o4"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ojep"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myxko"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcjsv"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqb8j"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdd32"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgbdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e18p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bwmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu3o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ojep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myxko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcjsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqb8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdd32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Basic Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -28,6 +93,7 @@ script = ExtResource("3_8krj1")
 movement = NodePath("../../EnemyMovement")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_da2xf")
 
 [node name="EnemyMovement" type="Node2D" parent="."]
@@ -63,6 +129,11 @@ offset_left = -15.0
 offset_top = -24.0
 offset_right = 15.0
 offset_bottom = -18.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vgbdv")
+autoplay = "default"
+frame_progress = 0.562595
 
 [connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
 [connection signal="trigger" from="HurtBox" to="Health" method="damage"]
