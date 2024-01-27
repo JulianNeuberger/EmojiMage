@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource("2_wynk6")
-shots_per_second = 2.0
+shots_per_second = 3.0
 bullet_spread = 0.2
 bullet_resource = ExtResource("1_2y6pe")
+bullets_per_shot = 1
+bullet_speed_variance = 50
