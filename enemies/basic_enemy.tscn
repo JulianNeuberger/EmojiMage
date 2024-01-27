@@ -65,3 +65,4 @@ offset_right = 15.0
 offset_bottom = -18.0
 
 [connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
+[connection signal="trigger" from="HurtBox" to="Health" method="damage"]

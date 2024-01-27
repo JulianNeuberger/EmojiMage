@@ -4,7 +4,7 @@ class_name KeepDistanceBehavior
 
 @export var target: Node2D
 @export var movement: EnemyMovement
-@export var keep_distance: float = 100
+@export var keep_distance: float = 250
 var classname: String = "keep_distance"
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

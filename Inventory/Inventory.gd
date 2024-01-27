@@ -16,8 +16,16 @@ func init():
 	inventory_changed.emit(self)
 
 func add_to_inventory(weapon_behavior: WandResource):
+	for i in range(len(slots)):
+		if slots[i] == null:
+			add_to_index(weapon_behavior, i)
+			return
 	# currently we have a  infinitely large inventory?
 	slots.push_back(weapon_behavior)
+	inventory_changed.emit(self)
+
+func add_to_index(weapon_behaviour: WandResource, index: int):
+	slots[index] = weapon_behaviour
 	inventory_changed.emit(self)
 
 func scroll_slot_left():
