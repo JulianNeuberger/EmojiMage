@@ -41,6 +41,7 @@ triggers_per_second = 10
 [node name="PlayerInventoryHandler" parent="." instance=ExtResource("8_b4w4o")]
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
+position = Vector2(30, 30)
 _wand_resource = ExtResource("10_8gpsv")
 
 [node name="Health" type="Node" parent="."]
