@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=23 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
-[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
-
+[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]

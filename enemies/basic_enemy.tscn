@@ -41,6 +41,7 @@ shape = SubResource("CircleShape2D_mipyo")
 script = ExtResource("4_2tfas")
 
 [node name="HurtBox" parent="." instance=ExtResource("6_eiel0")]
+collision_layer = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-7.10543e-15, 1)
