@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://b6tsqqhn46y5e"]
+[gd_scene load_steps=3 format=3 uid="uid://c6vereo7ojcbl"]
 
-[node name="Level5" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_e8ced"]
+[ext_resource type="PackedScene" uid="uid://bk2upo2wjq21f" path="res://levels/Level5/Level5_TileMap.tscn" id="2_7ohj6"]
+
+[node name="LevelPrototype" instance=ExtResource("1_e8ced")]
+
+[node name="Level5TileMap" parent="." index="0" instance=ExtResource("2_7ohj6")]
+
+[node name="EnemySpawner" parent="." index="1"]
+position = Vector2(604, 681)
+
+[node name="Wizard" parent="." index="2"]
+position = Vector2(583, 208)
