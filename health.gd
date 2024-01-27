@@ -23,3 +23,11 @@ func damage(damage_amount: float):
 func update_percentage():
 	var current_percentage = int(round((current_health / max_health) * 100))
 	percentage_changed.emit(current_percentage)
+
+func serialize() -> Dictionary:
+	return {
+		"current_health": current_health
+	}
+
+func deserialize(resource: Dictionary):
+	current_health = resource["current_health"]

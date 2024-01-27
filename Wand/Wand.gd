@@ -16,6 +16,7 @@ func set_wand_resorce(wand_resource: WandResource):
 		bullet_spawner.bullets_per_shot = wand_resource.bullets_per_shot
 		bullet_spawner.shots_per_second = wand_resource.shots_per_second
 		bullet_spawner.bullet_speed_variance = wand_resource.bullet_speed_variance
+		bullet_spawner.generate_delay_time()
 		wand_sprite.texture = wand_resource.sprite
 		wand_sprite.visible = true
 	else:

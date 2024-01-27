@@ -15,3 +15,19 @@ func _ready():
 func _process(delta):
 	velocity *= movement_parameters.movement_speed
 	move_and_slide()
+
+func serialize() -> Dictionary:
+	var dict = {
+		"inventory": inventory.serialize(),
+		"health": health.serialize(),
+	}
+	print(dict)
+	return dict
+
+func deserialize(dictionary: Dictionary):
+	print(dictionary)
+	if "inventory" in dictionary:
+		inventory.deserialize(dictionary["inventory"])
+	if "health" in dictionary:
+		health.deserialize(dictionary["health"])
+	

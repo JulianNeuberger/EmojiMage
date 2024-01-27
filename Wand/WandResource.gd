@@ -1,5 +1,7 @@
 extends Resource
 class_name WandResource
+
+@export var name: String
 @export var shots_per_second: float
 @export var bullet_spread: float = 0.1
 @export var bullet_resource: BulletResource
