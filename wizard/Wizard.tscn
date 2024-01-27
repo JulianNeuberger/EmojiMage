@@ -18,7 +18,7 @@ max_slots = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
 radius = 28.0179
 
-[node name="Wizard" type="CharacterBody2D"]
+[node name="Wizard" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ppgnw")
 movement_parameters = ExtResource("2_uwvth")
 inventory = SubResource("Resource_s7won")

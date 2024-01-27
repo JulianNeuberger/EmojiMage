@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://doamhicv54yp6"]
+
+[ext_resource type="Script" path="res://PlayerInputs/PlayerGUIHandler.gd" id="1_mxir8"]
+
+[node name="BuiltInHandler" type="Node"]
+script = ExtResource("1_mxir8")
