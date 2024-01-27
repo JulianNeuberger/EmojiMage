@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvwd7khp2hng2"]
+[gd_scene load_steps=2 format=3 uid="uid://cgqqflee25ey0"]
 
 [ext_resource type="Script" path="res://HealthBar/HealthAdapter.gd" id="1_5kask"]
 
-[node name="HeathAdapter" type="Node"]
+[node name="HealthAdapter" type="Node"]
 script = ExtResource("1_5kask")
