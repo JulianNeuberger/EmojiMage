@@ -29,3 +29,8 @@ func load_game():
 		for node in save_nodes:
 			node.deserialize(node_data)
 	
+func delete_game():
+	DirAccess.remove_absolute("user://savegame.save")
+
+func has_save() -> bool:
+	return DirAccess.dir_exists_absolute("user://savegame.save")
