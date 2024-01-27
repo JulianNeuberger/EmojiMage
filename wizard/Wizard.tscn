@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=12 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Texture2D" uid="uid://dlxc70y6ry15" path="res://wizard/Wizard.png" id="1_4ougy"]
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
+[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="8_avsfe"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
-slots = Array[Resource]([])
+slots = Array[Resource("res://Wand/WandResource.gd")]([])
 max_slots = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
@@ -36,5 +37,6 @@ triggers_per_second = 10
 [node name="PlayerRotationHandler" parent="." instance=ExtResource("8_jam5k")]
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
+wand_resource = ExtResource("8_avsfe")
 
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]

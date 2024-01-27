@@ -1,7 +1,7 @@
 extends Resource
 class_name Inventory
 
-@export var slots: Array[Resource]
+@export var slots: Array[WandResource]
 @export var max_slots: int = 3
 
 signal slot_changed(active_slot: int)
@@ -15,7 +15,7 @@ func init():
 		slots.push_back(null)
 	inventory_changed.emit(self)
 
-func add_to_inventory(weapon_behavior: Resource):
+func add_to_inventory(weapon_behavior: WandResource):
 	# currently we have a  infinitely large inventory?
 	slots.push_back(weapon_behavior)
 	inventory_changed.emit(self)

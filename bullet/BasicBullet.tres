@@ -5,3 +5,5 @@
 [resource]
 script = ExtResource("1_xi0os")
 speed = 400.0
+time_to_life = 4.0
+time_to_life_variance = 0.0
