@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=23 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
+[ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
 [ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
 [ext_resource type="Resource" uid="uid://18kdukj4wgjo" path="res://Wand/ShotgunWand.tres" id="7_1ycik"]
 [ext_resource type="PackedScene" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
+[ext_resource type="Resource" uid="uid://s1bitkymyxg4" path="res://Wand/HandWand.tres" id="8_fu3e2"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="9_sgpnb"]
 [ext_resource type="PackedScene" uid="uid://cgqqflee25ey0" path="res://HealthBar/HeathAdapter.tscn" id="10_4v2lf"]
 
