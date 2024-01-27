@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=9 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Texture2D" uid="uid://dlxc70y6ry15" path="res://wizard/Wizard.png" id="1_4ougy"]
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
-[ext_resource type="PackedScene" uid="uid://0xf4of3jet5g" path="res://BulletSpawner/BulletSpawner.tscn" id="4_equ4g"]
-[ext_resource type="Resource" uid="uid://df47o10gagxa" path="res://bullet/BasicBullet.tres" id="5_j3r64"]
 [ext_resource type="PackedScene" uid="uid://vl7u0555dfc2" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
+[ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
@@ -22,10 +21,6 @@ texture = ExtResource("1_4ougy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tejw6")
 
-[node name="BulletSpawner" parent="." instance=ExtResource("4_equ4g")]
-position = Vector2(31, -28)
-bullet_resource = ExtResource("5_j3r64")
-
 [node name="PlayerTriggerHandler" parent="." instance=ExtResource("6_yj3gn")]
 triggers_per_second = 10
 
@@ -33,4 +28,6 @@ triggers_per_second = 10
 
 [node name="PlayerRotationHandler" parent="." instance=ExtResource("8_jam5k")]
 
-[connection signal="trigger" from="PlayerTriggerHandler" to="BulletSpawner" method="spawn_bullet"]
+[node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
+
+[connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]

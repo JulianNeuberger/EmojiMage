@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WandResource" load_steps=3 format=3 uid="uid://bc88g3b5f0yd5"]
+
+[ext_resource type="Resource" uid="uid://df47o10gagxa" path="res://bullet/BasicBullet.tres" id="1_2y6pe"]
+[ext_resource type="Script" path="res://Wand/WandResource.gd" id="2_wynk6"]
+
+[resource]
+script = ExtResource("2_wynk6")
+shots_per_second = 2.0
+bullet_spread = 0.2
+bullet_resource = ExtResource("1_2y6pe")
