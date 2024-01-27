@@ -23,6 +23,7 @@ func _process(delta):
 	move_and_slide()
 
 func on_bullet_hit(target: HurtBox):
+	print("hit")
 	#animation
 	queue_free()
 
@@ -45,11 +46,11 @@ func set_layer(name, value):
 		hitbox.set_collision_layer_value(12, value)
 		hitbox.set_collision_layer_value(10, !value)
 		
-		hitbox.set_collision_mask_value(11, value)
-		hitbox.set_collision_mask_value(9, !value)
+		hitbox.set_collision_mask_value(9, value)
+		hitbox.set_collision_mask_value(11, !value)
 	else:
 		hitbox.set_collision_layer_value(12, !value)
 		hitbox.set_collision_layer_value(10, value)
 		
-		hitbox.set_collision_mask_value(11, !value)
-		hitbox.set_collision_mask_value(9, value)
+		hitbox.set_collision_mask_value(11, value)
+		hitbox.set_collision_mask_value(9, !value)
