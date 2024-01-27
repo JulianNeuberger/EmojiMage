@@ -15,6 +15,10 @@ run/main_scene="res://gui/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameSaver="*res://Autoloads/GameSaver.gd"
+
 [display]
 
 window/size/viewport_width=1920
