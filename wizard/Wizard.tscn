@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="8_avsfe"]
 [ext_resource type="PackedScene" uid="uid://dm8rmmwhwvbw4" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
+[ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
@@ -41,5 +42,8 @@ triggers_per_second = 10
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
 _wand_resource = ExtResource("8_avsfe")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("9_4lcvr")
 
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]

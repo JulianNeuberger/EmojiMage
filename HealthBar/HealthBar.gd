@@ -1,13 +1,15 @@
 extends ProgressBar
+class_name HealthBar
 
+@export var can_turn_invisible = true
 
 func _ready():
-	set_percentage(100)
+	set_percentage(value)
 	
 	
 func set_percentage(value: int):
 	self.value = value
-	if value == 100 or value == 0:
+	if can_turn_invisible and (value == 100 or value == 0):
 		visible = false
 	else:
 		visible = true

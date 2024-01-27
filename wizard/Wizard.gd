@@ -3,6 +3,8 @@ class_name Wizard
 
 @export var movement_parameters: MovementResource
 @export var inventory: Inventory
+@onready var health = $Health
+
 
 func _ready():
 	inventory.init()

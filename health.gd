@@ -4,8 +4,8 @@ class_name Health
 
 signal on_death(health_component: Health)
 signal percentage_changed(health_percentage: int)
-var max_health: float = 100.0
-var current_health: float
+@export var max_health: float = 100.0
+@export var current_health: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
