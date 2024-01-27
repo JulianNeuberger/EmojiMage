@@ -16,3 +16,4 @@ func _process(delta):
 	var diff = target_position - movement.global_position
 	movement.target = target_position - diff.normalized() * keep_distance
 	
+	
