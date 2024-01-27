@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://sevmmo1nmpks"]
+
+[ext_resource type="Script" path="res://gui/AdminTerminal/AdminTerminal.gd" id="1_fcaxu"]
+
+[node name="AdminTerminal" type="LineEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Command"
+caret_blink = true
+caret_blink_interval = 0.5
+script = ExtResource("1_fcaxu")
+
+[connection signal="text_submitted" from="." to="." method="_on_text_submitted"]

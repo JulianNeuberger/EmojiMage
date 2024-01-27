@@ -1,17 +1,14 @@
 extends Node2D
 
 var game_saver: GameSaver
+var continue_button
+var start_button
 
 func _ready():
-	var continue_button = $CanvasLayer/CenterContainer/VBoxContainer/Continue
-	var start_button = $CanvasLayer/CenterContainer/VBoxContainer/Start 
+	continue_button = $CanvasLayer/CenterContainer/VBoxContainer/Continue
+	start_button = $CanvasLayer/CenterContainer/VBoxContainer/Start 
 	game_saver = get_node("/root/GameSaver")
-	if game_saver.has_save():
-		continue_button.visible = true
-		continue_button.grab_focus()
-	else:
-		continue_button.visible = false
-		start_button.grab_focus()
+	grab_gui_focus()
 
 func _on_start_pressed():
 	game_saver.delete_game()
@@ -22,3 +19,16 @@ func _on_exit_pressed():
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://levels/testbed.tscn")
+
+func grab_gui_focus():
+	if game_saver:
+		if game_saver.has_save():
+			continue_button.visible = true
+			continue_button.grab_focus()
+		else:
+			continue_button.visible = false
+			start_button.grab_focus()
+
+func _on_gui_toggle_toggle(value):
+	if !value:
+		grab_gui_focus()
