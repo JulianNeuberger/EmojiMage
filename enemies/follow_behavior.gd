@@ -15,6 +15,6 @@ func _process(delta):
 		return
 	var tar_position = target.global_position
 	
-	movement.target = tar_position
+	movement.set_target(tar_position)
 	
 	 

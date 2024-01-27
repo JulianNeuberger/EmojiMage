@@ -4,6 +4,9 @@ class_name EnemyBehavior
 
 @onready var health_component: Health = $Health
 @export var change_interval_miliseconds: float = 2000
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var movement: EnemyMovement = $EnemyMovement
+
 var start_time := Time.get_ticks_msec()
 var is_disabled: bool = false
 
@@ -17,6 +20,7 @@ func _propagate_death(health: Health):
 func _ready():
 	$HurtBox.connect("trigger", func(source: HitBox): health_component.damage(10))
 	health_component.connect("on_death", _propagate_death)
+	movement.set_nav_agent(navigation_agent)
 
 func _process(delta):
 	for child in $Behaviors.get_children():
