@@ -17,7 +17,7 @@ func _process(delta):
 	var target_position = target.global_position
 	 
 	var diff = target_position - movement.global_position
-	movement.target = target_position - diff.normalized() * shooting_distance
+	movement.set_target(target_position - diff.normalized() * shooting_distance)
 	
 	if bullet_spawner == null:
 		return
