@@ -4,13 +4,14 @@ class_name Bullet
 @export var damage: int = 1
 @export var start_direction: Vector2
 @export var bullet_resource: BulletResource
+@onready var bullet_sprite = $BulletSprite
 var rng = RandomNumberGenerator.new()
-
 
 func _ready():
 	$HitBox.trigger.connect(on_bullet_hit)
 	set_start_direction(start_direction)
 	set_bullet_resource(bullet_resource)
+	set_bullet_sprite()
 	var timer = Timer.new()
 	self.add_child(timer)
 	timer.timeout.connect(queue_free)
@@ -34,3 +35,21 @@ func set_bullet_resource(bullet_resource:BulletResource):
 
 func set_bullet_speed(speed: float):
 	$ConstantVelocityComponent.speed = speed
+
+func set_bullet_sprite():
+	bullet_sprite.texture = bullet_resource.sprite
+	
+func set_layer(name, value):
+	var hitbox = $HitBox
+	if name == "EnemyHitBox":
+		hitbox.set_collision_layer_value(12, value)
+		hitbox.set_collision_layer_value(10, !value)
+		
+		hitbox.set_collision_mask_value(11, value)
+		hitbox.set_collision_mask_value(9, !value)
+	else:
+		hitbox.set_collision_layer_value(12, !value)
+		hitbox.set_collision_layer_value(10, value)
+		
+		hitbox.set_collision_mask_value(11, !value)
+		hitbox.set_collision_mask_value(9, value)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5dwvdvynsnak"]
+
+[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="1_7jbie"]
+[ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_6fp3k"]
+[ext_resource type="PackedScene" uid="uid://0xf4of3jet5g" path="res://BulletSpawner/BulletSpawner.tscn" id="2_nbwol"]
+[ext_resource type="Resource" uid="uid://cnheatqa4gn3h" path="res://bullet/EnemyBullet.tres" id="4_fwtm7"]
+
+[node name="ShootingEnemy" instance=ExtResource("1_7jbie")]
+
+[node name="ShootBehavior" type="Node" parent="Behaviors" index="1" node_paths=PackedStringArray("movement", "bullet_spawner")]
+script = ExtResource("2_6fp3k")
+movement = NodePath("../../EnemyMovement")
+bullet_spawner = NodePath("../../BulletSpawner")
+
+[node name="BulletSpawner" parent="." index="5" groups=["Enemy"] instance=ExtResource("2_nbwol")]
+bullet_resource = ExtResource("4_fwtm7")
+bullet_spread = 0.5
+bullets_per_shot = 1
+
+[node name="HurtBox" parent="." index="6"]
+collision_layer = 1024

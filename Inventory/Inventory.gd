@@ -35,3 +35,24 @@ func select_slot(slot_index: int):
 		return
 	active_slot = slot_index
 	slot_changed.emit(active_slot, slots[active_slot])
+
+func serialize() -> Dictionary:
+	return {
+		"slots": slots.map(save_wand_resource)
+	}
+
+func deserialize(dict: Dictionary):
+	var resource_slots = dict["slots"]
+	slots = []
+	for wand_name in resource_slots:
+		if wand_name == "null":
+			add_to_inventory(null)
+		else:
+			var wand_resource = load("res://Wand/%s.tres" % wand_name)
+			add_to_inventory(wand_resource)
+	
+func save_wand_resource(wand_resource):
+	if wand_resource:
+		return wand_resource.name
+	else:
+		return "null"

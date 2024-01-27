@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_kgo0e")
+name = "ShotgunWand"
 shots_per_second = 1.0
 bullet_spread = 0.5
 bullet_resource = ExtResource("1_4smnh")

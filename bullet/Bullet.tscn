@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b07md1ppnowaj"]
+[gd_scene load_steps=6 format=3 uid="uid://b07md1ppnowaj"]
 
 [ext_resource type="PackedScene" uid="uid://bnq16ndu6jwlv" path="res://HitAndHurtBox/HitBox.tscn" id="1_eq8f7"]
 [ext_resource type="Script" path="res://bullet/Bullet.gd" id="1_qorbx"]
-[ext_resource type="Texture2D" uid="uid://cypji13qwvmi" path="res://bullet/bullet.png" id="2_d03fa"]
 [ext_resource type="PackedScene" uid="uid://drsvqudv3u2cl" path="res://ConstantVelocity/ConstantVelocityComponent.tscn" id="4_otfnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hris"]
@@ -22,7 +21,6 @@ start_direction = Vector2(1, 2.08165e-12)
 shape = SubResource("CircleShape2D_2hris")
 
 [node name="BulletSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_d03fa")
 
 [node name="BulletCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cvu2a")

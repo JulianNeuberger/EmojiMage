@@ -15,6 +15,10 @@ run/main_scene="res://gui/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameSaver="*res://Autoloads/GameSaver.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -90,11 +94,13 @@ Exit={
 inventory_left={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(201, 22),"global_position":Vector2(205, 63),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":13,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 inventory_right={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(132, 10),"global_position":Vector2(136, 51),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 
@@ -103,6 +109,8 @@ inventory_right={
 2d_physics/layer_8="Bullet"
 2d_physics/layer_9="HurtBox"
 2d_physics/layer_10="HitBox"
+2d_physics/layer_11="EnemyHurtBox"
+2d_physics/layer_12="EnemyHitBox"
 
 [rendering]
 
