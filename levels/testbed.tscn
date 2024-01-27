@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=13 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
+[ext_resource type="PackedScene" uid="uid://c7wkav8ts6g4a" path="res://Utils/PauseGame.tscn" id="5_jj0yu"]
+[ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="5_qy06p"]
+[ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
+[ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwml0"]
 size = Vector2(4, 652)
@@ -86,3 +90,18 @@ enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), Sub
 position = Vector2(519, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Wizard"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseGame" parent="CanvasLayer" instance=ExtResource("5_jj0yu")]
+
+[node name="GuiToggle" parent="CanvasLayer" instance=ExtResource("5_qy06p")]
+
+[node name="PauseGui" parent="CanvasLayer/GuiToggle" instance=ExtResource("6_nbq01")]
+layout_mode = 1
+
+[node name="BuiltInHandler" parent="CanvasLayer" instance=ExtResource("7_3q20r")]
+
+[connection signal="toggle" from="CanvasLayer/GuiToggle" to="CanvasLayer/PauseGame" method="set_pause"]
+[connection signal="close_gui" from="CanvasLayer/GuiToggle/PauseGui" to="CanvasLayer/GuiToggle" method="close"]
+[connection signal="on_exit" from="CanvasLayer/BuiltInHandler" to="CanvasLayer/GuiToggle" method="toggle_gui"]
