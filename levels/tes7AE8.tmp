@@ -1,8 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=17 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
-[ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
-[ext_resource type="PackedScene" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
@@ -14,30 +12,26 @@
 [ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="6_nbq01"]
 [ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="7_1ycik"]
 [ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="7_3q20r"]
-[ext_resource type="Resource" path="res://Wand/HandWand.tres" id="8_fu3e2"]
-[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="9_sgpnb"]
-[ext_resource type="PackedScene" uid="uid://cgqqflee25ey0" path="res://HealthBar/HealthAdapter.tscn" id="10_4v2lf"]
 [ext_resource type="TileSet" uid="uid://chv17aqth4f8c" path="res://levels/Tiles/level1_tileset.tres" id="13_f4vey"]
 
-[sub_resource type="Resource" id="Resource_n5d00"]
-script = ExtResource("3_v1hms")
-enemy = ExtResource("2_mu7pw")
-amount = 3
-delay = 0.6
-
-[sub_resource type="Resource" id="Resource_3kjuf"]
+[sub_resource type="Resource" id="Resource_qc6ed"]
 script = ExtResource("3_v1hms")
 enemy = ExtResource("2_ycsx4")
-amount = 2
-delay = 0.3
+amount = 5
+delay = 1.5
+
+[sub_resource type="Resource" id="Resource_47ci0"]
+script = ExtResource("3_v1hms")
+enemy = ExtResource("2_ycsx4")
+amount = 10
+delay = 0.1
 
 [sub_resource type="Resource" id="Resource_7xwms"]
 script = ExtResource("5_71yym")
-slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("6_kwedf"), ExtResource("7_1ycik"), ExtResource("8_fu3e2")])
+slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("6_kwedf"), ExtResource("7_1ycik"), null])
 max_slots = 3
 
 [node name="Testbed" type="Node2D"]
-script = ExtResource("1_wc5e3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("13_f4vey")
@@ -50,7 +44,7 @@ layer_1/tile_data = PackedInt32Array()
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(564, 298)
 script = ExtResource("1_b78jq")
-enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_n5d00"), SubResource("Resource_3kjuf")])
+enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), SubResource("Resource_47ci0")])
 
 [node name="Wizard" parent="." instance=ExtResource("4_exd3k")]
 position = Vector2(519, 299)
@@ -90,21 +84,6 @@ offset_right = 38.0
 offset_bottom = 59.0
 
 [node name="BuiltInHandler" parent="CanvasLayer" instance=ExtResource("7_3q20r")]
-
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("9_sgpnb")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -419.0
-offset_top = 20.0
-offset_right = 419.0
-offset_bottom = 94.0
-grow_vertical = 1
-value = 100.0
-
-[node name="HeathAdapter" parent="CanvasLayer/HealthBar" node_paths=PackedStringArray("health_bar") instance=ExtResource("10_4v2lf")]
-health_bar = NodePath("..")
 
 [connection signal="toggle" from="CanvasLayer/GuiToggle" to="CanvasLayer/PauseGame" method="set_pause"]
 [connection signal="close_gui" from="CanvasLayer/GuiToggle/PauseGui" to="CanvasLayer/GuiToggle" method="close"]

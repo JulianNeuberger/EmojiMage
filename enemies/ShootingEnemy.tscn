@@ -14,8 +14,7 @@ bullet_spawner = NodePath("../../BulletSpawner")
 
 [node name="BulletSpawner" parent="." index="5" groups=["Enemy"] instance=ExtResource("2_nbwol")]
 bullet_resource = ExtResource("4_fwtm7")
-bullet_spread = 0.5
+bullet_spread = 2.08165e-12
 bullets_per_shot = 1
-
-[node name="HurtBox" parent="." index="6"]
-collision_layer = 1024
+bullet_speed_variance = 0
+shots_per_second = 2
