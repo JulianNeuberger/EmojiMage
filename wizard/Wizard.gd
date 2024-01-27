@@ -21,11 +21,9 @@ func serialize() -> Dictionary:
 		"inventory": inventory.serialize(),
 		"health": health.serialize(),
 	}
-	print(dict)
 	return dict
 
 func deserialize(dictionary: Dictionary):
-	print(dictionary)
 	if "inventory" in dictionary:
 		inventory.deserialize(dictionary["inventory"])
 	if "health" in dictionary:
