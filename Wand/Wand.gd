@@ -8,7 +8,7 @@ func _ready():
 
 func set_wand_resorce(wand_resource: WandResource):
 	bullet_spawner.bullet_resource = wand_resource.bullet_resource
-	
+	bullet_spawner.bullet_spread = wand_resource.bullet_spread
 	
 func shoot():
 	if wand_resource:
