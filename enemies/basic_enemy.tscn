@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=10 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://enemies/follow_behavior.gd" id="3_8krj1"]
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
+[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_555h1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
 
@@ -43,3 +44,12 @@ position = Vector2(-7.10543e-15, 1)
 rotation = 3.14159
 scale = Vector2(1.57483, -1.68531)
 shape = SubResource("CircleShape2D_mipyo")
+
+[node name="HealthBar" parent="." instance=ExtResource("8_555h1")]
+offset_left = -21.0
+offset_top = -27.0
+offset_right = -17.0
+offset_bottom = -23.0
+scale = Vector2(10.28, 1)
+
+[connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
