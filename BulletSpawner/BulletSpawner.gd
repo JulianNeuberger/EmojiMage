@@ -6,6 +6,7 @@ var bullet_prototype = preload("res://bullet/Bullet.tscn")
 @export var bullet_speed_variance: int = 2
 @export var shots_per_second: int
 
+var target_of_enemy: Node2D 
 var delay_time: float
 var waiting_timer: Timer
 var can_shoot = true
@@ -35,6 +36,7 @@ func trigger_bullet_spawn():
 
 
 func spawn_bullet():
+	var direction = 1
 	for i in range(bullets_per_shot):
 		var node: Bullet = bullet_prototype.instantiate()
 		if "Enemy" in get_groups():
@@ -49,3 +51,4 @@ func spawn_bullet():
 		node.global_position = global_position
 		var root = get_tree().root
 		root.add_child(node)
+
