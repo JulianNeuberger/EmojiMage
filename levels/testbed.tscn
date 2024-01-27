@@ -83,7 +83,7 @@ position = Vector2(564, 298)
 script = ExtResource("1_b78jq")
 enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_qc6ed"), SubResource("Resource_47ci0")])
 
-[node name="Wizard" parent="." instance=ExtResource("4_exd3k")]
+[node name="Wizard" parent="." groups=["player"] instance=ExtResource("4_exd3k")]
 position = Vector2(519, 299)
 
 [node name="Camera2D" type="Camera2D" parent="Wizard"]
