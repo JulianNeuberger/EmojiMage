@@ -4,7 +4,7 @@ var bullet_prototype = preload("res://bullet/Bullet.tscn")
 @export var bullet_spread: float = 0.1
 @export var bullets_per_shot: int
 @export var bullet_speed_variance: int = 2
-@export var shots_per_second: int = 1
+@export var shots_per_second: int
 
 var delay_time: float
 var waiting_timer: Timer
@@ -17,9 +17,12 @@ func _ready():
 	add_child(waiting_timer)
 	waiting_timer.autostart = false
 	waiting_timer.timeout.connect(_on_timeout)
+	
+	
+func generate_delay_time():
 	delay_time = 1.0 / shots_per_second
-	
-	
+
+
 func _on_timeout():
 	can_shoot = true
 	
