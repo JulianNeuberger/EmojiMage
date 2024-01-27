@@ -20,7 +20,9 @@ func _ready():
 	timer.start()
 
 func _process(delta):
-	move_and_slide()
+	var collided = move_and_slide()
+	if collided:
+		queue_free()
 
 func on_bullet_hit(target: HurtBox):
 	print("hit")
