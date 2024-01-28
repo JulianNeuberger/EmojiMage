@@ -23,7 +23,9 @@ GameSaver="*res://Autoloads/GameSaver.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/scale_mode="integer"
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/scale=2.0
 
 [input]
 
