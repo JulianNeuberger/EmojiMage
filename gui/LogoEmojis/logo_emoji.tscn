@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1l2vwe0etc7j"]
+[gd_scene load_steps=3 format=3 uid="uid://c1l2vwe0etc7j"]
 
 [ext_resource type="Texture2D" uid="uid://d3ow3bugjr0c1" path="res://torch/torch_grandiant_texture.tres" id="1_f2rvl"]
-[ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="1_f5w5e"]
 [ext_resource type="Script" path="res://gui/LogoEmojis/logo_emoji.gd" id="1_lt7ol"]
 
 [node name="LogoEmoji" type="Control"]
@@ -47,4 +46,3 @@ offset_right = 24.0
 offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_f5w5e")
