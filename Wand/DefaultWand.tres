@@ -4,16 +4,16 @@
 [ext_resource type="Curve" uid="uid://enepbmtdtedh" path="res://Wand/base_wand_shake_curve.tres" id="2_2timr"]
 [ext_resource type="Script" path="res://wizard/CameraShakeAttributes.gd" id="2_8i8x8"]
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="2_wynk6"]
-[ext_resource type="Texture2D" uid="uid://82p2t1ut4oes" path="res://Wand/wand_1.png" id="3_xqwwm"]
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_yksfe"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_2qwui"]
 [ext_resource type="AudioStream" uid="uid://ckuha3a1hnf4y" path="res://HitEffects/shot.ogg" id="7_djepp"]
+[ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="8_cmoxt"]
 
 [sub_resource type="Resource" id="Resource_shu75"]
 script = ExtResource("2_8i8x8")
 curve = ExtResource("2_2timr")
 duration = 0.1
-intensity = 30.0
+intensity = 5.0
 
 [sub_resource type="Resource" id="Resource_ni6xr"]
 script = ExtResource("6_2qwui")
@@ -21,11 +21,12 @@ sounds = Array[AudioStream]([ExtResource("7_djepp")])
 pitch_variation = 0.1
 particle_texture = ExtResource("5_yksfe")
 particle_emit_duration = 0.0
-particle_color = Color(1, 1, 1, 1)
+particle_color = Color(0.839216, 0.588235, 0, 1)
 particle_amount = 15
 particle_explosiveness = 1.0
 particle_frames = 5
 particle_oneshot = true
+particle_emit_angle_degree = 180.0
 flash_duration = 0.05
 
 [resource]
@@ -36,6 +37,6 @@ bullet_spread = 0.2
 bullet_resource = ExtResource("1_2y6pe")
 bullets_per_shot = 1
 bullet_speed_variance = 50
-sprite = ExtResource("3_xqwwm")
+sprite = ExtResource("8_cmoxt")
 camera_shake = SubResource("Resource_shu75")
 shoot_effect = SubResource("Resource_ni6xr")
