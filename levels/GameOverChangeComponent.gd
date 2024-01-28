@@ -8,4 +8,5 @@ func _ready():
 	wizard.health.on_death.connect(change_scene)
 
 func change_scene(health: Health):
+	get_parent().fade_scene_out()
 	get_tree().change_scene_to_packed(game_over_scene)
