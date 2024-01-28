@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cneubwxj2um3r"
-path="res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"
+uid="uid://b38nctpj8gxrb"
+path="res://.godot/imported/Rollemy.png-8f320256bfe91b785bea12f04c3de326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wand/wand_0.png"
-dest_files=["res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"]
+source_file="res://enemies/Rollemy.png"
+dest_files=["res://.godot/imported/Rollemy.png-8f320256bfe91b785bea12f04c3de326.ctex"]
 
 [params]
 

@@ -1,0 +1,119 @@
+[gd_scene load_steps=25 format=3 uid="uid://b4k0qbuyf82jb"]
+
+[ext_resource type="Script" path="res://levels/testbed.gd" id="1_qd80f"]
+[ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="3_vn323"]
+[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="4_ybmr4"]
+[ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="5_eueqe"]
+[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="6_ersyb"]
+[ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="7_dsit8"]
+[ext_resource type="Script" path="res://Inventory/Inventory.gd" id="8_vk6dh"]
+[ext_resource type="Resource" uid="uid://bc88g3b5f0yd5" path="res://Wand/DefaultWand.tres" id="9_o0dcd"]
+[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="10_fawyv"]
+[ext_resource type="PackedScene" uid="uid://c37uaabrvavc0" path="res://Inventory/InventoryView.tscn" id="11_bw6ml"]
+[ext_resource type="PackedScene" uid="uid://c7wkav8ts6g4a" path="res://Utils/PauseGame.tscn" id="12_qjeoc"]
+[ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="13_17fkv"]
+[ext_resource type="PackedScene" uid="uid://buhwlr85mkf4s" path="res://gui/PauseMenu/PauseGUI.tscn" id="14_ru8kw"]
+[ext_resource type="PackedScene" uid="uid://doamhicv54yp6" path="res://PlayerInputs/PlayerGUIHandler.tscn" id="15_fck0f"]
+[ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="16_njbwd"]
+[ext_resource type="PackedScene" uid="uid://cgqqflee25ey0" path="res://HealthBar/HealthAdapter.tscn" id="17_2ftoq"]
+[ext_resource type="PackedScene" uid="uid://dbbvf5r7satm3" path="res://levels/GrantRewardComponent.tscn" id="18_4r1ob"]
+[ext_resource type="Resource" uid="uid://ktp05k2sat2q" path="res://Wand/HandWand.tres" id="19_5qgxu"]
+[ext_resource type="PackedScene" uid="uid://d0nokkb8aiycw" path="res://levels/LevelChangeComponent.tscn" id="20_6ym35"]
+[ext_resource type="PackedScene" uid="uid://bcppc16nfrh8d" path="res://gui/MainMenu/MainMenu.tscn" id="21_0bb67"]
+[ext_resource type="PackedScene" uid="uid://dv611cflna2ek" path="res://levels/GameOverChangeComponent.tscn" id="22_evpea"]
+
+[sub_resource type="Resource" id="Resource_n5d00"]
+script = ExtResource("5_eueqe")
+enemy = ExtResource("4_ybmr4")
+amount = 3
+delay = 0.6
+
+[sub_resource type="Resource" id="Resource_3kjuf"]
+script = ExtResource("5_eueqe")
+enemy = ExtResource("6_ersyb")
+amount = 2
+delay = 0.3
+
+[sub_resource type="Resource" id="Resource_7xwms"]
+script = ExtResource("8_vk6dh")
+slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("9_o0dcd"), ExtResource("10_fawyv")])
+max_slots = 3
+
+[node name="LevelPrototype" type="Node2D"]
+script = ExtResource("1_qd80f")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+position = Vector2(564, 298)
+script = ExtResource("3_vn323")
+enemy_spawns = Array[ExtResource("5_eueqe")]([SubResource("Resource_n5d00"), SubResource("Resource_3kjuf")])
+
+[node name="Wizard" parent="." instance=ExtResource("7_dsit8")]
+position = Vector2(519, 299)
+inventory = SubResource("Resource_7xwms")
+
+[node name="Camera2D" type="Camera2D" parent="Wizard"]
+zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="InventoryView" parent="CanvasLayer/MarginContainer" instance=ExtResource("11_bw6ml")]
+layout_mode = 2
+
+[node name="PauseGame" parent="CanvasLayer" instance=ExtResource("12_qjeoc")]
+
+[node name="GuiToggle" parent="CanvasLayer" instance=ExtResource("13_17fkv")]
+
+[node name="PauseGui" parent="CanvasLayer/GuiToggle" instance=ExtResource("14_ru8kw")]
+layout_mode = 1
+offset_left = 38.0
+offset_top = 59.0
+offset_right = 38.0
+offset_bottom = 59.0
+
+[node name="BuiltInHandler" parent="CanvasLayer" instance=ExtResource("15_fck0f")]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("16_njbwd")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -419.0
+offset_top = 20.0
+offset_right = 419.0
+offset_bottom = 94.0
+grow_vertical = 1
+value = 100.0
+can_turn_invisible = false
+
+[node name="HeathAdapter" parent="CanvasLayer/HealthBar" node_paths=PackedStringArray("health_bar") instance=ExtResource("17_2ftoq")]
+health_bar = NodePath("..")
+
+[node name="GrantRewardComponent" parent="." instance=ExtResource("18_4r1ob")]
+wand_reward = ExtResource("19_5qgxu")
+
+[node name="LevelChangeComponent" parent="." instance=ExtResource("20_6ym35")]
+next_scene = ExtResource("21_0bb67")
+
+[node name="GameOverChangeComponent" parent="." instance=ExtResource("22_evpea")]
+game_over_scene = ExtResource("21_0bb67")
+
+[connection signal="on_all_killed" from="EnemySpawner" to="GrantRewardComponent" method="grant_reward"]
+[connection signal="on_all_killed" from="EnemySpawner" to="LevelChangeComponent" method="change_scene"]
+[connection signal="toggle" from="CanvasLayer/GuiToggle" to="CanvasLayer/PauseGame" method="set_pause"]
+[connection signal="close_gui" from="CanvasLayer/GuiToggle/PauseGui" to="CanvasLayer/GuiToggle" method="close"]
+[connection signal="on_exit" from="CanvasLayer/BuiltInHandler" to="CanvasLayer/GuiToggle" method="toggle_gui"]

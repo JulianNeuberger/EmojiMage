@@ -3,13 +3,16 @@ extends CharacterBody2D
 class_name EnemyBehavior
 
 @export var change_interval_miliseconds: float = 2000
-@export var hit_effect_attributes: HitEffectAttributes
+
+@export var effect_player: PackedScene
+
+@export var hit_effect: HitEffectAttributes
+@export var death_effect: HitEffectAttributes
 
 @onready var health_component: Health = $Health
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var movement: EnemyMovement = $EnemyMovement
 @onready var state: Node = $Behaviors/FollowBehavior
-@onready var hit_effect_player: HitEffectPlayer = $HitEffectPlayer
 @onready var hurt_box: HurtBox = $HurtBox
 
 var start_time := Time.get_ticks_msec()
@@ -18,7 +21,20 @@ var is_disabled: bool = false
 signal on_death
 
 func play_hit_effect():
-	hit_effect_player.play_effect(hit_effect_attributes)
+	_play_effect(hit_effect)
+
+func play_death_effect():
+	_play_effect(death_effect)
+
+func _play_effect(effect: HitEffectAttributes):
+	var tree = get_tree()
+	if tree == null: 
+		# level already finished
+		return
+	var player: HitEffectPlayer = effect_player.instantiate()
+	tree.root.add_child(player)
+	player.global_position = global_position
+	player.play(effect, self)
 
 func _propagate_death(health: Health):
 	on_death.emit()

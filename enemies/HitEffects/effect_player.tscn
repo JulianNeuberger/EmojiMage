@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://vyhtspfs0t6l"]
+
+[ext_resource type="Script" path="res://enemies/HitEffects/HitEffectPlayer.gd" id="1_i860x"]
+[ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://enemies/HitEffects/blood_splatter.png" id="2_hbhvj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ce0mr"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="HitEffectPlayer" type="Node2D"]
+script = ExtResource("1_i860x")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ce0mr")
+emitting = false
+amount = 20
+texture = ExtResource("2_hbhvj")
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+damping_min = 100.0
+damping_max = 100.0
+angle_min = -387.9
+angle_max = 164.4
+hue_variation_min = 0.1
+hue_variation_max = 0.1
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

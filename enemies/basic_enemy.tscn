@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=25 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
 [ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_2k8q2"]
 [ext_resource type="AudioStream" uid="uid://d23745x2ph5x2" path="res://enemies/HitEffects/hit1.ogg" id="2_2v165"]
+[ext_resource type="PackedScene" uid="uid://vyhtspfs0t6l" path="res://enemies/HitEffects/effect_player.tscn" id="2_jxbah"]
 [ext_resource type="Script" path="res://enemies/enemy_movement.gd" id="2_r0u5n"]
 [ext_resource type="Script" path="res://enemies/HitEffects/HitEffectAttributes.gd" id="2_vady1"]
 [ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://enemies/HitEffects/blood_splatter.png" id="3_8kdva"]
@@ -11,30 +12,90 @@
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_3fifs"]
-[ext_resource type="Script" path="res://enemies/HitEffects/HitEffectPlayer.gd" id="9_7x2wr"]
+[ext_resource type="Texture2D" uid="uid://b38nctpj8gxrb" path="res://enemies/Rollemy.png" id="9_cecxc"]
 
-[sub_resource type="Resource" id="Resource_g55vs"]
+[sub_resource type="Resource" id="Resource_kto2i"]
 script = ExtResource("2_vady1")
-hit_sounds = Array[AudioStream]([ExtResource("2_2v165")])
-death_sounds = Array[AudioStream]([])
-pitch_variation = 0.2
-splatter_texture = ExtResource("3_8kdva")
-flash_duration = 0.05
+sounds = Array[AudioStream]([ExtResource("2_2v165")])
+pitch_variation = 0.3
+particle_texture = ExtResource("3_8kdva")
+particle_emit_duration = 0.15
+particle_color = Color(0.431373, 0, 0, 1)
+flash_duration = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ce0mr"]
-particles_animation = true
-particles_anim_h_frames = 5
-particles_anim_v_frames = 1
-particles_anim_loop = false
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e18p"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bwmj"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu3o4"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ojep"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myxko"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcjsv"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqb8j"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdd32"]
+atlas = ExtResource("9_cecxc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgbdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e18p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bwmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu3o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ojep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myxko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcjsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqb8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdd32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Basic Enemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_mfs7k")
-hit_effect_attributes = SubResource("Resource_g55vs")
+effect_player = ExtResource("2_jxbah")
+hit_effect = SubResource("Resource_kto2i")
 
 [node name="Behaviors" type="Node" parent="."]
 
@@ -47,6 +108,7 @@ script = ExtResource("3_8krj1")
 movement = NodePath("../../EnemyMovement")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_da2xf")
 
 [node name="EnemyMovement" type="Node2D" parent="."]
@@ -83,29 +145,10 @@ offset_top = -24.0
 offset_right = 15.0
 offset_bottom = -18.0
 
-[node name="HitEffectPlayer" type="Node2D" parent="."]
-script = ExtResource("9_7x2wr")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="HitEffectPlayer"]
-material = SubResource("CanvasItemMaterial_ce0mr")
-emitting = false
-amount = 20
-texture = ExtResource("3_8kdva")
-gravity = Vector2(0, 0)
-initial_velocity_min = 75.0
-initial_velocity_max = 100.0
-damping_min = 100.0
-damping_max = 100.0
-angle_min = -387.9
-angle_max = 164.4
-color = Color(0.556863, 0, 0, 1)
-hue_variation_min = 0.1
-hue_variation_max = 0.1
-anim_speed_min = 1.0
-anim_speed_max = 1.0
-anim_offset_max = 1.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HitEffectPlayer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vgbdv")
+autoplay = "default"
+frame_progress = 0.562595
 
 [connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
 [connection signal="trigger" from="HurtBox" to="Health" method="damage"]

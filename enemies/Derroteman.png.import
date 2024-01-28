@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cneubwxj2um3r"
-path="res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"
+uid="uid://u1xfa2457qb7"
+path="res://.godot/imported/Derroteman.png-5a1fc348ab49d773dbd053895cd49682.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wand/wand_0.png"
-dest_files=["res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"]
+source_file="res://enemies/Derroteman.png"
+dest_files=["res://.godot/imported/Derroteman.png-5a1fc348ab49d773dbd053895cd49682.ctex"]
 
 [params]
 

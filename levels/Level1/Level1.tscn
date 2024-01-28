@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://tcy11xrasqu7"]
+
+[ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_do4df"]
+[ext_resource type="PackedScene" uid="uid://b2qx5ocdrljpo" path="res://levels/Level1/Level1_TileMap.tscn" id="2_0j77i"]
+
+[node name="LevelPrototype" instance=ExtResource("1_do4df")]
+
+[node name="Level1TileMap" parent="." index="0" instance=ExtResource("2_0j77i")]
+
+[node name="EnemySpawner" parent="." index="1"]
+position = Vector2(564, 248)
+
+[node name="Wizard" parent="." index="2"]
+position = Vector2(491, 299)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cneubwxj2um3r"
-path="res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"
+uid="uid://n0ge0duiy8ei"
+path="res://.godot/imported/Snat .png-1a3f1fbfd950710c3337abba153db168.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wand/wand_0.png"
-dest_files=["res://.godot/imported/wand_0.png-5536d52f1f45e32ab34ccf9bedceec6f.ctex"]
+source_file="res://enemies/Snat .png"
+dest_files=["res://.godot/imported/Snat .png-1a3f1fbfd950710c3337abba153db168.ctex"]
 
 [params]
 
