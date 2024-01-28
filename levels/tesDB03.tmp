@@ -1,10 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://7yju2kfshk56"]
+[gd_scene load_steps=24 format=3 uid="uid://7yju2kfshk56"]
 
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="1_b78jq"]
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_wc5e3"]
 [ext_resource type="PackedScene" uid="uid://cadf1yhlb4lok" path="res://levels/testbed_tilemap.tscn" id="2_mq010"]
-[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="2_mu7pw"]
-[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="2_ycsx4"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="3_v1hms"]
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="4_exd3k"]
 [ext_resource type="PackedScene" uid="uid://cl0gewu048p07" path="res://enemies/SmackEnemy.tscn" id="4_pxr75"]
@@ -24,23 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://bcppc16nfrh8d" path="res://gui/MainMenu/MainMenu.tscn" id="21_y0jxn"]
 [ext_resource type="PackedScene" uid="uid://dv611cflna2ek" path="res://levels/GameOverChangeComponent.tscn" id="22_oefml"]
 
-[sub_resource type="Resource" id="Resource_1337h"]
-script = ExtResource("3_v1hms")
-enemy = ExtResource("2_ycsx4")
-amount = 0
-delay = 0.5
-
 [sub_resource type="Resource" id="Resource_bduv4"]
 script = ExtResource("3_v1hms")
 enemy = ExtResource("4_pxr75")
 amount = 1
-delay = 0.2
-
-[sub_resource type="Resource" id="Resource_ysr5s"]
-script = ExtResource("3_v1hms")
-enemy = ExtResource("2_mu7pw")
-amount = 0
-delay = 0.3
+delay = 0.0
 
 [sub_resource type="Resource" id="Resource_7xwms"]
 script = ExtResource("5_71yym")
@@ -55,7 +41,7 @@ script = ExtResource("1_wc5e3")
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2(564, 298)
 script = ExtResource("1_b78jq")
-enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_1337h"), SubResource("Resource_bduv4"), SubResource("Resource_ysr5s")])
+enemy_spawns = Array[ExtResource("3_v1hms")]([SubResource("Resource_bduv4")])
 
 [node name="Wizard" parent="." instance=ExtResource("4_exd3k")]
 position = Vector2(519, 299)
