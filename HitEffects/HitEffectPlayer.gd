@@ -41,6 +41,7 @@ func _audio(effect_attributes: HitEffectAttributes):
 		1 - effect_attributes.pitch_variation, 
 		1 + effect_attributes.pitch_variation
 	)
+	audio_stream_player.volume_db += effect_attributes.volume_adjust
 	audio_stream_player.play()
 	audio_stream_player.connect("finished", func(): _audio_finished = true)
 

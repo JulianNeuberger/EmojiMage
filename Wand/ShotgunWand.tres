@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WandResource" load_steps=11 format=3 uid="uid://bsluy5wxafj5e"]
+[gd_resource type="Resource" script_class="WandResource" load_steps=13 format=3 uid="uid://bsluy5wxafj5e"]
 
 [ext_resource type="Resource" uid="uid://dcsd3i3jc1qvj" path="res://bullet/ShotgunBullet.tres" id="1_4smnh"]
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="1_kgo0e"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_okn6i"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_7eoyo"]
 [ext_resource type="AudioStream" uid="uid://ckuha3a1hnf4y" path="res://HitEffects/shot.ogg" id="7_foljt"]
+[ext_resource type="AudioStream" uid="uid://dxrnedsvinfeh" path="res://Assets/sounds/Shotnoise.ogg" id="8_2osip"]
 [ext_resource type="Texture2D" uid="uid://bffmycn0i0vh4" path="res://EmojiSprites/droplets_emoji.png" id="8_t3fxu"]
+[ext_resource type="AudioStream" uid="uid://baja1u8k6tlpc" path="res://Assets/sounds/Fuusch.ogg" id="9_olboq"]
 
 [sub_resource type="Resource" id="Resource_n75hd"]
 script = ExtResource("3_nxude")
@@ -17,8 +19,9 @@ intensity = 10.0
 
 [sub_resource type="Resource" id="Resource_2gfwg"]
 script = ExtResource("6_7eoyo")
-sounds = Array[AudioStream]([ExtResource("7_foljt")])
+sounds = Array[AudioStream]([ExtResource("7_foljt"), ExtResource("8_2osip"), ExtResource("9_olboq")])
 pitch_variation = 0.4
+volume_adjust = 0.8
 particle_texture = ExtResource("5_okn6i")
 particle_emit_duration = 0.0
 particle_color = Color(0.576471, 0.607843, 1, 1)
