@@ -4,8 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://6c3nf4fxf2v7" path="res://levels/Level2/Level2_TileMap.tscn" id="2_uqmxt"]
 
 [node name="LevelPrototype" instance=ExtResource("1_bd6o0")]
+level_name = "Level2"
 
 [node name="Level2TileMap" parent="." index="0" instance=ExtResource("2_uqmxt")]
 
 [node name="EnemySpawner" parent="." index="1"]
 position = Vector2(762, 110)
+radius = 50.0
+
+[node name="Wizard" parent="." index="2"]
+position = Vector2(339, 474)

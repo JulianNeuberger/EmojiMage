@@ -14,7 +14,7 @@ func _ready():
 func _on_start_pressed():
 	_fade_scene_out()
 	game_saver.delete_game()
-	get_tree().change_scene_to_file("res://levels/Level1/Level1.tscn")
+	get_tree().change_scene_to_file("res://gui/ShopScene/ShopScene.tscn")
 
 func _on_exit_pressed():
 	_fade_scene_out()
@@ -22,7 +22,7 @@ func _on_exit_pressed():
 
 func _on_continue_pressed():
 	_fade_scene_out()
-	get_tree().change_scene_to_file("res://levels/Level1/Level1.tscn")
+	get_tree().change_scene_to_file("res://gui/ShopScene/ShopScene.tscn")
 
 func grab_gui_focus():
 	if game_saver:
