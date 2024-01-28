@@ -1,11 +1,14 @@
-[gd_scene load_steps=30 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=34 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="3_gf4u5"]
+[ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://HitEffects/blood_splatter.png" id="4_52pwb"]
 [ext_resource type="Texture2D" uid="uid://cdpt54yos0did" path="res://wizard/wizard_sprite.png" id="4_k87nx"]
+[ext_resource type="AudioStream" uid="uid://cqcqiqd15fxak" path="res://Assets/sounds/Oah.ogg" id="6_a5gc7"]
 [ext_resource type="PackedScene" uid="uid://du1oylx7ued42" path="res://PlayerInputs/PlayerTriggerHandler.tscn" id="6_yj3gn"]
 [ext_resource type="PackedScene" uid="uid://by5awb2fb57hl" path="res://PlayerInputs/PlayerMovementHandler.tscn" id="7_7d58m"]
+[ext_resource type="AudioStream" uid="uid://dwct3ebeq71gj" path="res://Assets/sounds/Uagh.ogg" id="7_g26h4"]
 [ext_resource type="PackedScene" uid="uid://kk4usio0ih0s" path="res://Wand/Wand.tscn" id="7_oqb2r"]
 [ext_resource type="PackedScene" uid="uid://imxtb574uttf" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
@@ -26,6 +29,23 @@
 script = ExtResource("3_gf4u5")
 slots = Array[Resource("res://Wand/WandResource.gd")]([])
 max_slots = 3
+
+[sub_resource type="Resource" id="Resource_caeit"]
+script = ExtResource("9_w7a0a")
+sounds = Array[AudioStream]([ExtResource("6_a5gc7"), ExtResource("7_g26h4")])
+pitch_variation = 1.0
+volume_adjust = 5.0
+particle_texture = ExtResource("4_52pwb")
+particle_emit_duration = 0.0
+particle_color = Color(0.427451, 0, 0, 1)
+particle_amount = 4
+particle_explosiveness = 1.0
+particle_frames = 1
+particle_oneshot = true
+particle_emit_angle_degree = 45.0
+particle_speed_min = 75.0
+particle_speed_max = 100.0
+flash_duration = 0.05
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_si4m8"]
 particles_animation = true
@@ -84,6 +104,7 @@ collision_mask = 7
 script = ExtResource("1_ppgnw")
 movement_parameters = ExtResource("2_uwvth")
 inventory = SubResource("Resource_s7won")
+hit_effect = SubResource("Resource_caeit")
 
 [node name="Wand" parent="." instance=ExtResource("7_oqb2r")]
 position = Vector2(12, 11)
