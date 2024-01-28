@@ -17,6 +17,7 @@ var effect_player: PackedScene = preload("res://HitEffects/effect_player.tscn")
 
 var start_time := Time.get_ticks_msec()
 var is_disabled: bool = false
+var dead = false
 
 signal on_death
 
@@ -38,7 +39,9 @@ func _play_effect(effect: HitEffectAttributes, hit_direction: Vector2):
 	player.play(effect, self)
 
 func _propagate_death(health: Health):
-	on_death.emit()
+	if !dead:
+		on_death.emit()
+		dead = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
