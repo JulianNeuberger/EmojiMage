@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4k0qbuyf82jb"]
+[gd_scene load_steps=30 format=3 uid="uid://b4k0qbuyf82jb"]
 
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_qd80f"]
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="3_vn323"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bcppc16nfrh8d" path="res://gui/MainMenu/MainMenu.tscn" id="21_0bb67"]
 [ext_resource type="PackedScene" uid="uid://bwwdulk3xaiao" path="res://gui/ShopScene/ShopScene.tscn" id="22_emiqg"]
 [ext_resource type="PackedScene" uid="uid://dv611cflna2ek" path="res://levels/GameOverChangeComponent.tscn" id="22_evpea"]
+[ext_resource type="AudioStream" uid="uid://cyu0f3mkkbj1x" path="res://Assets/🪕.ogg" id="25_t25wh"]
 
 [sub_resource type="Resource" id="Resource_n5d00"]
 script = ExtResource("5_eueqe")
@@ -41,6 +42,11 @@ delay = 0.3
 script = ExtResource("8_vk6dh")
 slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("9_o0dcd"), ExtResource("10_fawyv")])
 max_slots = 3
+
+[sub_resource type="Environment" id="Environment_4imda"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.13
 
 [node name="LevelPrototype" type="Node2D" groups=["saveable"]]
 script = ExtResource("1_qd80f")
@@ -104,6 +110,7 @@ can_turn_invisible = false
 health_bar = NodePath("..")
 
 [node name="GuiFade" parent="CanvasLayer" instance=ExtResource("17_7fiqp")]
+visible = false
 fade_in_duration = 0.3
 fade_out_duration = 0.3
 
@@ -118,6 +125,16 @@ next_scene = ExtResource("22_emiqg")
 
 [node name="GameOverChangeComponent" parent="." instance=ExtResource("22_evpea")]
 game_over_scene = ExtResource("21_0bb67")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.368627, 0.305882, 0.262745, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4imda")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_t25wh")
+autoplay = true
 
 [connection signal="on_all_killed" from="EnemySpawner" to="GrantRewardComponent" method="grant_reward"]
 [connection signal="on_all_killed" from="EnemySpawner" to="LevelChangeComponent" method="change_scene"]
