@@ -24,6 +24,7 @@ func _set_active_slot(slot_index: int):
 		child.set_active(slot_index == index)
 		index += 1
 
-func _add_slot_view(slot: Resource):
+func _add_slot_view(slot: WandResource):
 	var slot_instance = slot_view.instantiate()
 	add_child(slot_instance)
+	slot_instance.set_weapon(slot)

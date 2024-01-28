@@ -64,6 +64,6 @@ func _play_effect(effect: HitEffectAttributes):
 		return
 	var player: HitEffectPlayer = _effect_player.instantiate()
 	tree.root.add_child(player)
-	player.global_position = global_position
+	player.global_position = emoji_sprite.global_position
 	player.global_rotation = global_rotation
 	player.play(effect, self)
