@@ -73,12 +73,10 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="GuiFade" parent="CanvasLayer" instance=ExtResource("5_3q78q")]
-mouse_filter = 2
 fade_out_duration = 1.0
 
 [node name="Blackout" parent="CanvasLayer/GuiFade" instance=ExtResource("6_hqk2h")]
 layout_mode = 1
-mouse_filter = 2
 
 [node name="PlayerMainMenuHandler" parent="." instance=ExtResource("5_wghs4")]
 
