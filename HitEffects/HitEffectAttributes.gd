@@ -4,6 +4,7 @@ class_name HitEffectAttributes
 
 @export var sounds: Array[AudioStream]
 @export var pitch_variation: float = 1.0
+@export var volume_adjust: float = 1.0
 
 @export var particle_texture: Texture2D
 @export var particle_emit_duration: float

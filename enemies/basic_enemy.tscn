@@ -1,24 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=24 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
-[ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_2k8q2"]
 [ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://HitEffects/blood_splatter.png" id="2_cn7vn"]
 [ext_resource type="Script" path="res://enemies/enemy_movement.gd" id="2_r0u5n"]
 [ext_resource type="Script" path="res://enemies/follow_behavior.gd" id="3_8krj1"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="3_ktggs"]
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
-[ext_resource type="AudioStream" uid="uid://cqcqiqd15fxak" path="res://Assets/sounds/Oah.ogg" id="4_jgufm"]
 [ext_resource type="AudioStream" uid="uid://biru2mneb5hiy" path="res://Assets/sounds/Pfomp.ogg" id="5_mud4n"]
+[ext_resource type="Script" path="res://enemies/keep_distance_behavior.gd" id="6_831pd"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
-[ext_resource type="AudioStream" uid="uid://dwct3ebeq71gj" path="res://Assets/sounds/Uagh.ogg" id="6_fda3s"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_3fifs"]
 [ext_resource type="Texture2D" uid="uid://b38nctpj8gxrb" path="res://enemies/Rollemy.png" id="9_cecxc"]
 
 [sub_resource type="Resource" id="Resource_kto2i"]
 script = ExtResource("3_ktggs")
-sounds = Array[AudioStream]([ExtResource("4_jgufm"), ExtResource("5_mud4n"), ExtResource("6_fda3s")])
+sounds = Array[AudioStream]([ExtResource("5_mud4n")])
 pitch_variation = 0.3
+volume_adjust = 1.0
 particle_texture = ExtResource("2_cn7vn")
 particle_emit_duration = 0.0
 particle_color = Color(0.431373, 0, 0, 1)

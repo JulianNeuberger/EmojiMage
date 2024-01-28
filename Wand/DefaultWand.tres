@@ -19,6 +19,7 @@ intensity = 5.0
 script = ExtResource("6_2qwui")
 sounds = Array[AudioStream]([ExtResource("7_k4hkp")])
 pitch_variation = 0.1
+volume_adjust = -30.0
 particle_texture = ExtResource("5_yksfe")
 particle_emit_duration = 0.0
 particle_color = Color(0.839216, 0.588235, 0, 1)
