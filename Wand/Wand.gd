@@ -6,6 +6,7 @@ extends Node2D
 @onready var bullet_spawner = $BulletSpawner
 @onready var wand_sprite = $WandSprite
 @onready var emoji_sprite = $WandSprite/EmojiSprite
+@onready var start_pos: Vector2 = position
 
 var _effect_player: PackedScene = preload("res://HitEffects/effect_player.tscn")
 var _player: Wizard
@@ -56,6 +57,7 @@ func shoot():
 		return
 	_play_effect(_wand_resource.shoot_effect)
 	_shake_camera()
+	_animate()
 
 func _shake_camera():
 	if _camera_shake == null:
@@ -72,3 +74,11 @@ func _play_effect(effect: HitEffectAttributes):
 	player.global_position = emoji_sprite.global_position
 	player.global_rotation = global_rotation
 	player.play(effect, self)
+
+func _animate():
+	if _wand_resource == null:
+		return
+	var tween = get_tree().create_tween()
+	var half_animation_time = 0.5 / _wand_resource.shots_per_second
+	tween.tween_property(self, "position", start_pos + Vector2(10, 0), half_animation_time)
+	tween.chain().tween_property(self, "position", start_pos, half_animation_time)
