@@ -1,21 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=16 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
 [ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_2k8q2"]
+[ext_resource type="AudioStream" uid="uid://d23745x2ph5x2" path="res://enemies/HitEffects/hit1.ogg" id="2_2v165"]
 [ext_resource type="Script" path="res://enemies/enemy_movement.gd" id="2_r0u5n"]
+[ext_resource type="Script" path="res://enemies/HitEffects/HitEffectAttributes.gd" id="2_vady1"]
+[ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://enemies/HitEffects/blood_splatter.png" id="3_8kdva"]
 [ext_resource type="Script" path="res://enemies/follow_behavior.gd" id="3_8krj1"]
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_3fifs"]
+[ext_resource type="Script" path="res://enemies/HitEffects/HitEffectPlayer.gd" id="9_7x2wr"]
+
+[sub_resource type="Resource" id="Resource_g55vs"]
+script = ExtResource("2_vady1")
+hit_sounds = Array[AudioStream]([ExtResource("2_2v165")])
+death_sounds = Array[AudioStream]([])
+pitch_variation = 0.2
+splatter_texture = ExtResource("3_8kdva")
+flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ce0mr"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [node name="Basic Enemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_mfs7k")
+hit_effect_attributes = SubResource("Resource_g55vs")
 
 [node name="Behaviors" type="Node" parent="."]
 
@@ -63,6 +82,30 @@ offset_left = -15.0
 offset_top = -24.0
 offset_right = 15.0
 offset_bottom = -18.0
+
+[node name="HitEffectPlayer" type="Node2D" parent="."]
+script = ExtResource("9_7x2wr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="HitEffectPlayer"]
+material = SubResource("CanvasItemMaterial_ce0mr")
+emitting = false
+amount = 20
+texture = ExtResource("3_8kdva")
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+damping_min = 100.0
+damping_max = 100.0
+angle_min = -387.9
+angle_max = 164.4
+color = Color(0.556863, 0, 0, 1)
+hue_variation_min = 0.1
+hue_variation_max = 0.1
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HitEffectPlayer"]
 
 [connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
 [connection signal="trigger" from="HurtBox" to="Health" method="damage"]
