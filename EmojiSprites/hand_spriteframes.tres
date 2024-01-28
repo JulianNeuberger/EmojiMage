@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c5mkwh6osml2q"]
+
+[ext_resource type="Texture2D" uid="uid://cc6d4eh24eihf" path="res://EmojiSprites/hand_emoji.png" id="1_qp3xy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1gyv"]
+atlas = ExtResource("1_qp3xy")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1gyv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
