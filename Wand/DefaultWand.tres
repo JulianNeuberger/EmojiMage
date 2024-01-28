@@ -13,7 +13,7 @@
 script = ExtResource("2_8i8x8")
 curve = ExtResource("2_2timr")
 duration = 0.1
-intensity = 30.0
+intensity = 5.0
 
 [sub_resource type="Resource" id="Resource_ni6xr"]
 script = ExtResource("6_2qwui")

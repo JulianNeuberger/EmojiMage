@@ -17,3 +17,4 @@ rotation = 1.57079
 texture = ExtResource("3_02ok3")
 
 [node name="BulletSpawner" parent="." instance=ExtResource("2_hh44x")]
+position = Vector2(16, 0)
