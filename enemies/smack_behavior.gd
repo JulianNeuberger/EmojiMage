@@ -4,7 +4,7 @@ class_name SmackBehavior
 
 @export var target: Node2D
 @export var movement: EnemyMovement
-@export var smacking_distance: float = 30
+@export var smacking_distance: float = 45
 @export var smacking_damage: float = 10
 @export var smacks_per_sec: float = 2
 @onready var stick_sprite = get_parent().get_parent().find_child("StickSprite")
@@ -33,7 +33,7 @@ func animate():
 func rotate_user():
 	var enemy = get_parent().get_parent()
 	var target_direction = (target.global_position - enemy.global_position).normalized()
-	stick_sprite.global_position = enemy.global_position + target_direction * 25
+	stick_sprite.global_position = enemy.global_position + target_direction * 20
 	stick_sprite.rotation = Vector2.RIGHT.angle_to(target_direction)
 	
 func _process(delta):
