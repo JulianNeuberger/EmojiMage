@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="1_oh7ou"]
 [ext_resource type="Resource" uid="uid://75ok0vxei6d5" path="res://bullet/HandBullet.tres" id="1_rcxes"]
-[ext_resource type="Texture2D" uid="uid://dkgdobfo7yt5a" path="res://Wand/wand_2.png" id="2_1cxwy"]
 [ext_resource type="Curve" uid="uid://enepbmtdtedh" path="res://Wand/base_wand_shake_curve.tres" id="2_d1u54"]
 [ext_resource type="Script" path="res://wizard/CameraShakeAttributes.gd" id="3_5vrq0"]
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_ioy2t"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_y4j3u"]
+[ext_resource type="Texture2D" uid="uid://cc6d4eh24eihf" path="res://EmojiSprites/hand_emoji.png" id="7_g07nr"]
 
 [sub_resource type="Resource" id="Resource_qw1km"]
 script = ExtResource("3_5vrq0")
@@ -35,6 +35,6 @@ bullet_spread = 0.1
 bullet_resource = ExtResource("1_rcxes")
 bullets_per_shot = 1
 bullet_speed_variance = 50
-sprite = ExtResource("2_1cxwy")
+sprite = ExtResource("7_g07nr")
 camera_shake = SubResource("Resource_qw1km")
 shoot_effect = SubResource("Resource_x51ns")

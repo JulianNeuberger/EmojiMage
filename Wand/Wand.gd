@@ -4,7 +4,8 @@ extends Node2D
 @export var _wand_resource: WandResource
 
 @onready var bullet_spawner = $BulletSpawner
-@onready var wand_sprite = $Sprite2D
+@onready var wand_sprite = $WandSprite
+@onready var emoji_sprite = $WandSprite/EmojiSprite
 
 var _effect_player: PackedScene = preload("res://HitEffects/effect_player.tscn")
 var _player: Wizard
@@ -33,10 +34,12 @@ func set_wand_resorce(wand_resource: WandResource):
 		bullet_spawner.shots_per_second = wand_resource.shots_per_second
 		bullet_spawner.bullet_speed_variance = wand_resource.bullet_speed_variance
 		bullet_spawner.generate_delay_time()
-		wand_sprite.texture = wand_resource.sprite
+		emoji_sprite.texture = wand_resource.sprite
+		emoji_sprite.visible = true
 		wand_sprite.visible = true
 	else:
 		wand_sprite.visible = false
+		emoji_sprite.visible = false
 		
 	_wand_resource = wand_resource
 	

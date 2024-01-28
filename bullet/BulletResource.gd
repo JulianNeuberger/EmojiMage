@@ -7,5 +7,4 @@ class_name BulletResource
 @export var time_to_life_variance: float
 @export var sprite: Texture
 @export var damage: float
-
-
+@export var rotation_radians_variance: float
