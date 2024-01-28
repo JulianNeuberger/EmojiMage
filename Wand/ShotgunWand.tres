@@ -21,11 +21,12 @@ sounds = Array[AudioStream]([ExtResource("7_foljt")])
 pitch_variation = 0.4
 particle_texture = ExtResource("5_okn6i")
 particle_emit_duration = 0.0
-particle_color = Color(0.4, 0.4, 0.4, 1)
+particle_color = Color(0.576471, 0.607843, 1, 1)
 particle_amount = 25
 particle_explosiveness = 1.0
 particle_frames = 5
 particle_oneshot = true
+particle_emit_angle_degree = 45.0
 flash_duration = 0.05
 
 [resource]

@@ -24,7 +24,6 @@ func _ready():
 		if camera == null: 
 			return
 		_camera_shake = camera.find_child("CameraShake")
-		print("found _camera_shake %s in %d children" % [str(_camera_shake), len(camera.get_children())])
 
 
 func set_wand_resorce(wand_resource: WandResource):
@@ -47,7 +46,6 @@ func set_wand_resorce(wand_resource: WandResource):
 	var wand_name = "not set"
 	if _wand_resource:
 		wand_name = _wand_resource.name
-	print("[[wand %s]] player: %s, camera shake: %s" % [str(wand_name), str(_player), str(_camera_shake)])
 	
 func shoot():
 	if _wand_resource == null: 

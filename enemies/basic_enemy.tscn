@@ -24,6 +24,7 @@ particle_amount = 2
 particle_explosiveness = 1.0
 particle_frames = 5
 particle_oneshot = true
+particle_emit_angle_degree = 45.0
 flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]

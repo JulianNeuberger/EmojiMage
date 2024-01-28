@@ -23,6 +23,7 @@ func play(effect_attributes: HitEffectAttributes, effect_root: Node2D):
 	particle_system.amount = effect_attributes.particle_amount
 	particle_system.one_shot = effect_attributes.particle_oneshot
 	particle_system.material.particles_anim_h_frames = effect_attributes.particle_frames
+	particle_system.spread = effect_attributes.particle_emit_angle_degree
 	
 	_particle_emitting_duration = effect_attributes.particle_emit_duration
 	_flash_duration = effect_attributes.flash_duration
