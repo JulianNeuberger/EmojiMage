@@ -28,6 +28,8 @@ particle_explosiveness = 1.0
 particle_frames = 5
 particle_oneshot = true
 particle_emit_angle_degree = 45.0
+particle_speed_min = 75.0
+particle_speed_max = 100.0
 flash_duration = 0.05
 
 [resource]

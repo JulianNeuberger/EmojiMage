@@ -10,5 +10,4 @@ func change_scene():
 	get_parent().level_completed = true
 	if game_saver:
 		game_saver.save_game()
-	get_parent().fade_scene_out()
 	get_tree().change_scene_to_packed(next_scene)
