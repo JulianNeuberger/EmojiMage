@@ -1,12 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcppc16nfrh8d"]
+[gd_scene load_steps=17 format=3 uid="uid://bcppc16nfrh8d"]
 
-[ext_resource type="Texture2D" uid="uid://do0rahvxndj06" path="res://gui/MainMenu/Logo.png" id="1_65guv"]
 [ext_resource type="Script" path="res://gui/MainMenu/MainMenu.gd" id="1_f1kpf"]
+[ext_resource type="Texture2D" uid="uid://ntnxhahso5wf" path="res://Assets/Logo_background.png" id="2_escdj"]
 [ext_resource type="PackedScene" uid="uid://sevmmo1nmpks" path="res://gui/AdminTerminal/AdminTerminal.tscn" id="3_0h1vq"]
 [ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="3_kqct5"]
+[ext_resource type="Texture2D" uid="uid://bfseachgjnu31" path="res://Assets/Logo_text.png" id="3_pxloh"]
+[ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="4_f2iow"]
 [ext_resource type="PackedScene" uid="uid://if6mc66q2ou6" path="res://gui/Transitions/GUIFade.tscn" id="5_3q78q"]
+[ext_resource type="Texture2D" uid="uid://bffmycn0i0vh4" path="res://EmojiSprites/droplets_emoji.png" id="5_t4ogd"]
 [ext_resource type="PackedScene" uid="uid://ct4udox2r2r15" path="res://PlayerInputs/PlayerMainMenuHandler.tscn" id="5_wghs4"]
 [ext_resource type="PackedScene" uid="uid://b3tq33mb1kgvc" path="res://gui/Blackout/Blackout.tscn" id="6_hqk2h"]
+[ext_resource type="Texture2D" uid="uid://cc6d4eh24eihf" path="res://EmojiSprites/hand_emoji.png" id="6_jsjrt"]
+[ext_resource type="Texture2D" uid="uid://cypji13qwvmi" path="res://bullet/bullet.png" id="7_0fgk2"]
+[ext_resource type="PackedScene" uid="uid://c1l2vwe0etc7j" path="res://gui/LogoEmojis/logo_emoji.tscn" id="7_82fjn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhi1t"]
+
+[sub_resource type="Gradient" id="Gradient_i4oyo"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8gv50"]
+gradient = SubResource("Gradient_i4oyo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+metadata/_snap_enabled = true
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_f1kpf")
@@ -19,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -99.0
-offset_right = 128.0
-offset_bottom = 99.0
+offset_left = -200.0
+offset_top = -162.5
+offset_right = 200.0
+offset_bottom = 162.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -31,9 +49,92 @@ size_flags_vertical = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
 layout_mode = 2
 
-[node name="Logo" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 220)
 layout_mode = 2
-texture = ExtResource("1_65guv")
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vhi1t")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.5
+offset_top = -124.5
+offset_right = 248.5
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_escdj")
+
+[node name="Gradient" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel"]
+modulate = Color(0.988235, 0, 0.756863, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -81.5
+offset_right = 122.0
+offset_bottom = 167.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_8gv50")
+
+[node name="Laughing" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel" instance=ExtResource("7_82fjn")]
+offset_left = 91.0
+offset_top = -6.5
+offset_right = 131.0
+offset_bottom = 33.5
+emoji_texture = ExtResource("7_0fgk2")
+duration = 0.8
+offset = -12
+
+[node name="Drops" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel" instance=ExtResource("7_82fjn")]
+offset_left = 224.0
+offset_top = -16.5
+offset_right = 264.0
+offset_bottom = 23.5
+emoji_texture = ExtResource("5_t4ogd")
+offset = -8
+
+[node name="Hand" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel" instance=ExtResource("7_82fjn")]
+offset_left = 140.0
+offset_top = 69.5
+offset_right = 180.0
+offset_bottom = 109.5
+emoji_texture = ExtResource("6_jsjrt")
+duration = 0.4
+offset = -7
+
+[node name="Poop_Control" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel" instance=ExtResource("7_82fjn")]
+offset_left = 249.0
+offset_top = 69.5
+offset_right = 289.0
+offset_bottom = 109.5
+emoji_texture = ExtResource("4_f2iow")
+duration = 0.6
+offset = -3
+
+[node name="Logo" type="TextureRect" parent="CanvasLayer/CenterContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pxloh")
 
 [node name="Continue" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(80, 2.08165e-12)
