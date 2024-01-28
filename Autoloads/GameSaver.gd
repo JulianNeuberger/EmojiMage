@@ -24,7 +24,15 @@ func load_save_file():
 		var parse_result = json.parse(json_string)
 		save_data_list.append(parse_result)
 	return save_data_list
+
+func c():
+	var save_file = load_save_file()
+	for node_save in save_file:
+		if "level_name" in node_save:
+			return node_save["level_name"]
+	return "null"
 	
+
 	
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):

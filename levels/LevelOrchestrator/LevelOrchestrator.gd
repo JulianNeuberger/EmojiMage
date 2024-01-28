@@ -1,15 +1,18 @@
-extends Node2D
+extends Node
 
 var game_saver: GameSaver
 
 
-func load_from_save():
+func _ready():
 	game_saver = get_node("/root/GameSaver")
-	if game_saver and game_saver.has_save():
-		game_saver.load_game()
+
+
+func load_level():
+	var level_name = game_saver.get_level_name()
+	change_level_to(level_name)
+
 
 func change_level_to(level_name: String):
-
 	match(level_name):
 		"Level1":
 			get_tree().change_scene_to_file("res://levels/Level1/Level1.tscn")
