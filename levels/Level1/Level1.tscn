@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://tcy11xrasqu7"]
+[gd_scene load_steps=3 format=3 uid="uid://tcy11xrasqu7"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_do4df"]
 [ext_resource type="PackedScene" uid="uid://b2qx5ocdrljpo" path="res://levels/Level1/Level1_TileMap.tscn" id="2_0j77i"]
-[ext_resource type="PackedScene" uid="uid://c8mai678ndn2a" path="res://levels/Level2/Level2.tscn" id="3_sdehv"]
 
 [node name="LevelPrototype" instance=ExtResource("1_do4df")]
 level_name = "Level1"
@@ -15,7 +14,3 @@ radius = 80.0
 
 [node name="Wizard" parent="." index="2"]
 position = Vector2(491, 299)
-
-[node name="LevelChangeComponent" parent="." index="5"]
-next_scene = ExtResource("3_sdehv")
-next_level_name = "Level2"

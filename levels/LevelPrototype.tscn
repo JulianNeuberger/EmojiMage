@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b4k0qbuyf82jb"]
+[gd_scene load_steps=28 format=3 uid="uid://b4k0qbuyf82jb"]
 
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_qd80f"]
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="3_vn323"]
@@ -22,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://klmfwyx1f4oi" path="res://Wand/HandWand.tres" id="19_5qgxu"]
 [ext_resource type="PackedScene" uid="uid://d0nokkb8aiycw" path="res://levels/LevelChangeComponent.tscn" id="20_6ym35"]
 [ext_resource type="PackedScene" uid="uid://bcppc16nfrh8d" path="res://gui/MainMenu/MainMenu.tscn" id="21_0bb67"]
+[ext_resource type="PackedScene" uid="uid://bwwdulk3xaiao" path="res://gui/ShopScene/ShopScene.tscn" id="22_emiqg"]
 [ext_resource type="PackedScene" uid="uid://dv611cflna2ek" path="res://levels/GameOverChangeComponent.tscn" id="22_evpea"]
 
 [sub_resource type="Resource" id="Resource_n5d00"]
@@ -116,7 +117,7 @@ layout_mode = 1
 wand_reward = ExtResource("19_5qgxu")
 
 [node name="LevelChangeComponent" parent="." instance=ExtResource("20_6ym35")]
-next_scene = ExtResource("21_0bb67")
+next_scene = ExtResource("22_emiqg")
 
 [node name="GameOverChangeComponent" parent="." instance=ExtResource("22_evpea")]
 game_over_scene = ExtResource("21_0bb67")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwwdulk3xaiao"]
+[gd_scene load_steps=5 format=3 uid="uid://bwwdulk3xaiao"]
 
 [ext_resource type="Script" path="res://gui/ShopScene/ShopScene.gd" id="1_c32wt"]
 [ext_resource type="PackedScene" uid="uid://dr5u5xtga7hix" path="res://levels/LevelOrchestrator/LevelOrchestrator.tscn" id="2_f0tpr"]
+[ext_resource type="PackedScene" uid="uid://if6mc66q2ou6" path="res://gui/Transitions/GUIFade.tscn" id="3_xnlsg"]
+[ext_resource type="PackedScene" uid="uid://b3tq33mb1kgvc" path="res://gui/Blackout/Blackout.tscn" id="4_gxgdv"]
 
 [node name="ShopScene" type="Node2D"]
 script = ExtResource("1_c32wt")
@@ -9,3 +11,24 @@ script = ExtResource("1_c32wt")
 [node name="LevelOrchestrator" parent="." instance=ExtResource("2_f0tpr")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ok" type="Button" parent="CanvasLayer/CenterContainer"]
+custom_minimum_size = Vector2(120, 2.08165e-12)
+layout_mode = 2
+text = "Next Level"
+
+[node name="GuiFade" parent="CanvasLayer" instance=ExtResource("3_xnlsg")]
+fade_in_duration = 0.3
+fade_out_duration = 0.3
+
+[node name="Blackout" parent="CanvasLayer/GuiFade" instance=ExtResource("4_gxgdv")]
+layout_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Ok" to="LevelOrchestrator" method="load_level"]

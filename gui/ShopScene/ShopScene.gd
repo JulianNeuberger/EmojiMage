@@ -1,11 +1,21 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	fade_scene_in()
+	$CanvasLayer/CenterContainer/Ok.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func fade_scene_out():
+	var gui_fade = $CanvasLayer/GuiFade
+	if gui_fade:
+		gui_fade.fade_in()
+		await gui_fade.finished_fade
+
+func fade_scene_in():
+	var gui_fade = $CanvasLayer/GuiFade
+	if gui_fade:
+		gui_fade.modulate.a = 1
+		gui_fade.fade_out()
+		await gui_fade.finished_fade

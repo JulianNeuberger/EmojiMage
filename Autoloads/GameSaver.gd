@@ -14,25 +14,30 @@ func save_game():
 
 func load_save_file():
 	if not FileAccess.file_exists("user://savegame.save"):
-		return 
+		return []
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var save_data_list = []
 	while save_game.get_position() < save_game.get_length():
 		var json_string = save_game.get_line()
-
 		var json = JSON.new()
-		var parse_result = json.parse(json_string)
-		save_data_list.append(parse_result)
+		json.parse(json_string)
+		save_data_list.append(json.get_data())
 	return save_data_list
 
-func c():
+func get_level_name() -> String:
 	var save_file = load_save_file()
 	for node_save in save_file:
 		if "level_name" in node_save:
 			return node_save["level_name"]
 	return "null"
 	
-
+func get_level_completed() -> bool:
+	var save_file = load_save_file()
+	for node_save in save_file:
+		if "level_completed" in node_save:
+			return node_save["level_completed"]
+	return false
+	
 	
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):

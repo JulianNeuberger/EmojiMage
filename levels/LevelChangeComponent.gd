@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var next_scene: PackedScene
-@export var next_level_name: String
 var game_saver: GameSaver
 
 func _ready():
