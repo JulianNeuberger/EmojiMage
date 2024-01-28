@@ -39,7 +39,7 @@ script = ExtResource("8_vk6dh")
 slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("9_o0dcd"), ExtResource("10_fawyv")])
 max_slots = 3
 
-[node name="LevelPrototype" type="Node2D"]
+[node name="LevelPrototype" type="Node2D" groups=["saveable"]]
 script = ExtResource("1_qd80f")
 
 [node name="EnemySpawner" type="Node2D" parent="."]

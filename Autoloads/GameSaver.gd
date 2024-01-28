@@ -11,6 +11,21 @@ func save_game():
 		var json_string = JSON.stringify(node_data)
 		save_game.store_line(json_string)
 
+
+func load_save_file():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return 
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var save_data_list = []
+	while save_game.get_position() < save_game.get_length():
+		var json_string = save_game.get_line()
+
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		save_data_list.append(parse_result)
+	return save_data_list
+	
+	
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return # Error! We don't have a save to load.

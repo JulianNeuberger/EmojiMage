@@ -4,11 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://bk2upo2wjq21f" path="res://levels/Level5/Level5_TileMap.tscn" id="2_7ohj6"]
 
 [node name="LevelPrototype" instance=ExtResource("1_e8ced")]
+level_name = "Level5"
 
 [node name="Level5TileMap" parent="." index="0" instance=ExtResource("2_7ohj6")]
 
 [node name="EnemySpawner" parent="." index="1"]
 position = Vector2(604, 681)
+radius = 50.0
 
 [node name="Wizard" parent="." index="2"]
 position = Vector2(583, 208)
+
+[node name="LevelChangeComponent" parent="." index="5"]
+next_level_name = "Level1"

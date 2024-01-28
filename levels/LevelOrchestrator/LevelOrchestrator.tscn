@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr5u5xtga7hix"]
+
+[ext_resource type="Script" path="res://levels/LevelOrchestrator/LevelOrchestrator.gd" id="1_l6ne2"]
+
+[node name="LevelOrchestrator" type="Node2D"]
+script = ExtResource("1_l6ne2")
