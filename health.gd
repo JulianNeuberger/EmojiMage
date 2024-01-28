@@ -13,6 +13,9 @@ func _ready():
 	update_percentage()
 
 
+func receive_hurt_box_damage(damage_amount: float, _direction: Vector2):
+	damage(damage_amount)
+
 func damage(damage_amount: float):
 	current_health -= damage_amount
 	update_percentage()

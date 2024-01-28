@@ -44,3 +44,19 @@ func change_level_to(level_name: String):
 		"Level5":
 			get_tree().change_scene_to_file("res://levels/Level5/Level5.tscn")
 	"""
+	fade_scene_in()
+
+func fade_scene_out():
+	var gui_fade = $CanvasLayer/GuiFade
+	print(gui_fade)
+	if gui_fade:
+		gui_fade.fade_in()
+		await gui_fade.finished_fade
+
+func fade_scene_in():
+	var gui_fade = $CanvasLayer/GuiFade
+	print(gui_fade)
+	if gui_fade:
+		gui_fade.modulate.a = 1
+		gui_fade.fade_out()
+		await gui_fade.finished_fade

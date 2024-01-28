@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3tq33mb1kgvc"]
+
+[sub_resource type="Gradient" id="Gradient_b70f2"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f123e"]
+gradient = SubResource("Gradient_b70f2")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[node name="Blackout" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_f123e")

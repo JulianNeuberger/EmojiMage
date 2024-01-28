@@ -1,8 +1,31 @@
-[gd_resource type="Resource" script_class="WandResource" load_steps=4 format=3 uid="uid://ktp05k2sat2q"]
+[gd_resource type="Resource" script_class="WandResource" load_steps=10 format=3 uid="uid://klmfwyx1f4oi"]
 
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="1_oh7ou"]
 [ext_resource type="Resource" uid="uid://75ok0vxei6d5" path="res://bullet/HandBullet.tres" id="1_rcxes"]
 [ext_resource type="Texture2D" uid="uid://dkgdobfo7yt5a" path="res://Wand/wand_2.png" id="2_1cxwy"]
+[ext_resource type="Curve" uid="uid://enepbmtdtedh" path="res://Wand/base_wand_shake_curve.tres" id="2_d1u54"]
+[ext_resource type="Script" path="res://wizard/CameraShakeAttributes.gd" id="3_5vrq0"]
+[ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_ioy2t"]
+[ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_y4j3u"]
+
+[sub_resource type="Resource" id="Resource_qw1km"]
+script = ExtResource("3_5vrq0")
+curve = ExtResource("2_d1u54")
+duration = 0.1
+intensity = 20.0
+
+[sub_resource type="Resource" id="Resource_x51ns"]
+script = ExtResource("6_y4j3u")
+sounds = Array[AudioStream]([])
+pitch_variation = 0.1
+particle_texture = ExtResource("5_ioy2t")
+particle_emit_duration = 0.0
+particle_color = Color(0, 0.623529, 0.627451, 1)
+particle_amount = 10
+particle_explosiveness = 1.0
+particle_frames = 5
+particle_oneshot = true
+flash_duration = 0.05
 
 [resource]
 script = ExtResource("1_oh7ou")
@@ -13,3 +36,5 @@ bullet_resource = ExtResource("1_rcxes")
 bullets_per_shot = 1
 bullet_speed_variance = 50
 sprite = ExtResource("2_1cxwy")
+camera_shake = SubResource("Resource_qw1km")
+shoot_effect = SubResource("Resource_x51ns")

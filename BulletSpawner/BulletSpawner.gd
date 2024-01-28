@@ -33,6 +33,8 @@ func trigger_bullet_spawn():
 		spawn_bullet()
 		waiting_timer.start(delay_time)
 		can_shoot = false
+		return true
+	return false
 
 
 func spawn_bullet():
