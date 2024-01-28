@@ -10,18 +10,31 @@ signal on_all_killed
 
 var _all_spawned: bool = false
 var _num_alive: int = 0
+var _end_timeout_seconds = 1.
+var _ended = false
 
 
 func _ready():
 	spawn_enemies()
 
 
+func _process(delta):
+	if _ended:
+		return
+	if _num_alive == 0:
+		_end_timeout_seconds -= delta
+	if _end_timeout_seconds <= 0:
+		_ended = true
+		end()
+
+func end():
+	await get_parent().fade_scene_out()
+	on_all_killed.emit()
+
+
 func kill_enemy(enemy: EnemyBehavior):
 	enemy.queue_free()
 	_num_alive -= 1
-	if _num_alive == 0:
-		print("All enemies killed in level!")
-		on_all_killed.emit()
 
 
 func spawn_enemies():
