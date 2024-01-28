@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="BulletResource" load_steps=3 format=3 uid="uid://dcsd3i3jc1qvj"]
 
 [ext_resource type="Script" path="res://bullet/BulletResource.gd" id="1_cp64u"]
-[ext_resource type="Texture2D" uid="uid://bffmycn0i0vh4" path="res://EmojiSprites/droplets_emoji.png" id="2_bmvt7"]
+[ext_resource type="SpriteFrames" uid="uid://djokx4lkt1e5v" path="res://EmojiSprites/droplets_spriteframes.tres" id="2_liath"]
 
 [resource]
 script = ExtResource("1_cp64u")
 speed = 500.0
 time_to_life = 0.5
 time_to_life_variance = 0.2
-sprite = ExtResource("2_bmvt7")
+sprites = ExtResource("2_liath")
 damage = 8.0
+rotation_radians_variance = 0.0

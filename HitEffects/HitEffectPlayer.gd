@@ -28,6 +28,13 @@ func play(effect_attributes: HitEffectAttributes, effect_root: Node2D):
 	_particle_emitting_duration = effect_attributes.particle_emit_duration
 	_flash_duration = effect_attributes.flash_duration
 	
+	_audio(effect_attributes)
+	
+	
+func _audio(effect_attributes: HitEffectAttributes):
+	if effect_attributes.sounds == null or len(effect_attributes.sounds) == 0:
+		_audio_finished = true
+		return
 	var sound = effect_attributes.sounds.pick_random()
 	audio_stream_player.stream = sound
 	audio_stream_player.pitch_scale = randf_range(

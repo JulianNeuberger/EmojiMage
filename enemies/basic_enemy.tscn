@@ -116,7 +116,7 @@ texture = ExtResource("1_da2xf")
 
 [node name="EnemyMovement" type="Node2D" parent="."]
 script = ExtResource("2_r0u5n")
-movement_per_sec = 10.0
+movement_per_sec = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.10543e-15, 1)
