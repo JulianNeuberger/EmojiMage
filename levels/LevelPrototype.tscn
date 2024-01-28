@@ -75,7 +75,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 25
 
 [node name="InventoryView" parent="CanvasLayer/MarginContainer" instance=ExtResource("11_bw6ml")]
 layout_mode = 2
