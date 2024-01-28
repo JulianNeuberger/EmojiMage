@@ -54,9 +54,6 @@ enemy_spawns = Array[ExtResource("5_eueqe")]([SubResource("Resource_n5d00"), Sub
 position = Vector2(519, 299)
 inventory = SubResource("Resource_7xwms")
 
-[node name="Camera2D2" type="Camera2D" parent="Wizard"]
-zoom = Vector2(2, 2)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]

@@ -20,10 +20,11 @@ pitch_variation = 0.3
 particle_texture = ExtResource("2_cn7vn")
 particle_emit_duration = 0.0
 particle_color = Color(0.431373, 0, 0, 1)
-particle_amount = 5
+particle_amount = 2
 particle_explosiveness = 1.0
 particle_frames = 5
 particle_oneshot = true
+particle_emit_angle_degree = 45.0
 flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]

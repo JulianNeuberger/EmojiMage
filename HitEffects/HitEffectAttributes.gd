@@ -12,5 +12,6 @@ class_name HitEffectAttributes
 @export var particle_explosiveness: float = 0.0
 @export var particle_frames: int = 1
 @export var particle_oneshot: bool = true
+@export var particle_emit_angle_degree: float = 45.0
 
 @export var flash_duration: float = .05
