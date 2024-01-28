@@ -4,7 +4,7 @@ class_name Bullet
 @export var damage: int = 1
 @export var start_direction: Vector2
 @export var bullet_resource: BulletResource
-@onready var bullet_sprite = $BulletSprite
+@onready var bullet_sprite: AnimatedSprite2D = $BulletSprite
 var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -27,7 +27,7 @@ func _process(delta):
 	if collided:
 		queue_free()
 
-func on_bullet_hit(target: HurtBox):
+func on_bullet_hit(target: HurtBox, _direction: Vector2):
 	#animation
 	queue_free()
 
@@ -43,7 +43,12 @@ func set_bullet_speed(speed: float):
 	$ConstantVelocityComponent.speed = speed
 
 func set_bullet_sprite():
-	bullet_sprite.texture = bullet_resource.sprite
+	bullet_sprite.sprite_frames = bullet_resource.sprites
+	bullet_sprite.play("")
+	bullet_sprite.rotation = randf_range(
+		-bullet_resource.rotation_radians_variance, 
+		bullet_resource.rotation_radians_variance
+	)
 	
 func set_layer(name, value):
 	var hitbox = $HitBox

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b0ha6qrmuahmb"]
+
+[ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="1_sbu2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3oav"]
+atlas = ExtResource("1_sbu2h")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3oav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwqhkrf4vdi7"
-path="res://.godot/imported/hand_bullet.png-f011108290b2a6f79cd668b255bd4d33.ctex"
+uid="uid://bffmycn0i0vh4"
+path="res://.godot/imported/droplets_emoji.png-e130153cfb108583aab229bc410a23c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bullet/hand_bullet.png"
-dest_files=["res://.godot/imported/hand_bullet.png-f011108290b2a6f79cd668b255bd4d33.ctex"]
+source_file="res://EmojiSprites/droplets_emoji.png"
+dest_files=["res://.godot/imported/droplets_emoji.png-e130153cfb108583aab229bc410a23c8.ctex"]
 
 [params]
 

@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="BulletResource" load_steps=3 format=3 uid="uid://cnheatqa4gn3h"]
 
 [ext_resource type="Script" path="res://bullet/BulletResource.gd" id="1_fk0al"]
-[ext_resource type="Texture2D" uid="uid://cypji13qwvmi" path="res://bullet/bullet.png" id="2_f4kyd"]
+[ext_resource type="SpriteFrames" uid="uid://daflphn4ovub3" path="res://bullet/enemy_bullet_spriteframes.tres" id="2_kppmd"]
 
 [resource]
 script = ExtResource("1_fk0al")
-speed = 400.0
+speed = 75.0
 time_to_life = 3.0
 time_to_life_variance = 0.0
-sprite = ExtResource("2_f4kyd")
+sprites = ExtResource("2_kppmd")
 damage = 10.0
+rotation_radians_variance = 0.0
