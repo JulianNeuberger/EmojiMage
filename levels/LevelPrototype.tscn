@@ -86,10 +86,6 @@ layout_mode = 2
 
 [node name="PauseGui" parent="CanvasLayer/GuiToggle" instance=ExtResource("14_ru8kw")]
 layout_mode = 1
-offset_left = 38.0
-offset_top = 59.0
-offset_right = 38.0
-offset_bottom = 59.0
 
 [node name="BuiltInHandler" parent="CanvasLayer" instance=ExtResource("15_fck0f")]
 
@@ -98,10 +94,10 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -419.0
-offset_top = 20.0
-offset_right = 419.0
-offset_bottom = 94.0
+offset_left = -126.0
+offset_top = 20.08
+offset_right = 126.0
+offset_bottom = 47.08
 grow_vertical = 1
 value = 100.0
 can_turn_invisible = false
