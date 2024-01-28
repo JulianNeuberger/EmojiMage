@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xmuma7eni4"]
+[gd_scene load_steps=30 format=3 uid="uid://xmuma7eni4"]
 
 [ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_ppgnw"]
 [ext_resource type="Resource" uid="uid://cfgy83j6ccydw" path="res://wizard/wizard_movement.tres" id="2_uwvth"]
@@ -10,9 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://imxtb574uttf" path="res://PlayerInputs/PlayerInventoryHandler.tscn" id="8_b4w4o"]
 [ext_resource type="PackedScene" uid="uid://mxr10d1iunr0" path="res://PlayerInputs/PlayerRotationHandler.tscn" id="8_jam5k"]
 [ext_resource type="Script" path="res://health.gd" id="9_4lcvr"]
+[ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="9_w7a0a"]
+[ext_resource type="AudioStream" uid="uid://bpko8hxsru38e" path="res://Assets/sounds/step_sounds/step_0.ogg" id="10_a874g"]
+[ext_resource type="AudioStream" uid="uid://bp5nxxyobkyqg" path="res://Assets/sounds/step_sounds/step_1.ogg" id="11_33ccp"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="11_twput"]
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="12_c5st4"]
+[ext_resource type="AudioStream" uid="uid://b5y50rni6kjs7" path="res://Assets/sounds/step_sounds/step_2.ogg" id="12_qoyxc"]
 [ext_resource type="Script" path="res://wizard/CameraShake.gd" id="13_4b5hg"]
+[ext_resource type="AudioStream" uid="uid://ibr2psxa3mqq" path="res://Assets/sounds/step_sounds/step_3.ogg" id="13_m4c7b"]
+[ext_resource type="AudioStream" uid="uid://cjif8ln028815" path="res://Assets/sounds/step_sounds/step_4.ogg" id="14_k5oyf"]
+[ext_resource type="AudioStream" uid="uid://dilsbpbea2eg1" path="res://Assets/sounds/step_sounds/step_5.ogg" id="15_rqcxw"]
+[ext_resource type="AudioStream" uid="uid://c2kdhaym55i6d" path="res://Assets/sounds/step_sounds/step_6.ogg" id="16_lv6wh"]
 
 [sub_resource type="Resource" id="Resource_s7won"]
 script = ExtResource("3_gf4u5")
@@ -49,6 +57,23 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejw6"]
 radius = 13.0
+
+[sub_resource type="Resource" id="Resource_gvbfk"]
+script = ExtResource("9_w7a0a")
+sounds = Array[AudioStream]([ExtResource("10_a874g"), ExtResource("11_33ccp"), ExtResource("12_qoyxc"), ExtResource("13_m4c7b"), ExtResource("14_k5oyf"), ExtResource("15_rqcxw"), ExtResource("16_lv6wh")])
+pitch_variation = 1.1
+volume_adjust = -15.0
+particle_texture = ExtResource("12_c5st4")
+particle_emit_duration = 0.0
+particle_color = Color(1, 1, 1, 1)
+particle_amount = 5
+particle_explosiveness = 1.0
+particle_frames = 5
+particle_oneshot = true
+particle_emit_angle_degree = 360.0
+particle_speed_min = 15.0
+particle_speed_max = 25.0
+flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ihppc"]
 radius = 13.0
@@ -93,6 +118,7 @@ triggers_per_second = 10
 
 [node name="PlayerMovementHandler" parent="." instance=ExtResource("7_7d58m")]
 step_interval_seconds = 0.25
+step_effect = SubResource("Resource_gvbfk")
 
 [node name="PlayerRotationHandler" parent="." instance=ExtResource("8_jam5k")]
 
