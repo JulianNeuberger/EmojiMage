@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=25 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
@@ -31,6 +31,9 @@ particle_speed_max = 100.0
 flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o4kmu"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e18p"]
 atlas = ExtResource("9_cecxc")
@@ -146,6 +149,8 @@ avoidance_priority = 0.0
 debug_enabled = true
 
 [node name="HealthBar" parent="." instance=ExtResource("8_3fifs")]
+z_index = 1
+material = SubResource("CanvasItemMaterial_o4kmu")
 offset_left = -15.0
 offset_top = -24.0
 offset_right = 15.0
