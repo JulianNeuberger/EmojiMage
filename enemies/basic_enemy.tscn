@@ -105,7 +105,7 @@ hit_effect = SubResource("Resource_kto2i")
 [node name="Behaviors" type="Node" parent="."]
 
 [node name="KeepDistanceBehavior" type="Node" parent="Behaviors" node_paths=PackedStringArray("movement")]
-script = ExtResource("2_2k8q2")
+script = ExtResource("6_831pd")
 movement = NodePath("../../EnemyMovement")
 
 [node name="FollowBehavior" type="Node" parent="Behaviors" node_paths=PackedStringArray("movement")]
