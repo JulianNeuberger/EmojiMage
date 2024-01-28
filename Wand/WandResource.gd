@@ -9,3 +9,4 @@ class_name WandResource
 @export var bullet_speed_variance: int = 50
 @export var sprite: Texture
 @export var camera_shake: CameraShakeAttributes
+@export var shoot_effect: HitEffectAttributes

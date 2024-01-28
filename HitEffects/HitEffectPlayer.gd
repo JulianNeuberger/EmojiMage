@@ -19,6 +19,11 @@ func play(effect_attributes: HitEffectAttributes, effect_root: Node2D):
 	
 	particle_system.texture = effect_attributes.particle_texture
 	particle_system.modulate = effect_attributes.particle_color
+	particle_system.explosiveness = effect_attributes.particle_explosiveness
+	particle_system.amount = effect_attributes.particle_amount
+	particle_system.one_shot = effect_attributes.particle_oneshot
+	particle_system.material.particles_anim_h_frames = effect_attributes.particle_frames
+	
 	_particle_emitting_duration = effect_attributes.particle_emit_duration
 	_flash_duration = effect_attributes.flash_duration
 	
@@ -41,14 +46,17 @@ func _flash(delta):
 	_flash_duration -= delta
 
 func _particles(delta):
-	particle_system.emitting = _particle_emitting_duration > 0
-	_particle_emitting_duration -= delta
+	if particle_system.one_shot:
+		particle_system.emitting = true
+	else:
+		particle_system.emitting = _particle_emitting_duration > 0
+		_particle_emitting_duration -= delta
 
 func _process(delta):
 	_flash(delta)
 	_particles(delta)
 	
-	var dead = _flash_duration <= 0 and _particle_emitting_duration <= 0 and _audio_finished
+	var dead = _flash_duration <= 0 and not particle_system.emitting and _audio_finished
 	if dead:
 		# wait for all particles to die
 		await get_tree().create_timer(particle_system.lifetime).timeout

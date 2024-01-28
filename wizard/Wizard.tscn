@@ -112,4 +112,4 @@ zoom = Vector2(2, 2)
 script = ExtResource("13_4b5hg")
 
 [connection signal="trigger" from="PlayerTriggerHandler" to="Wand" method="shoot"]
-[connection signal="trigger" from="HurtBox" to="Health" method="damage"]
+[connection signal="trigger" from="HurtBox" to="Health" method="receive_hurt_box_damage"]

@@ -2,9 +2,11 @@ extends Node2D
 
 
 @export var _wand_resource: WandResource
+
 @onready var bullet_spawner = $BulletSpawner
 @onready var wand_sprite = $Sprite2D
 
+var _effect_player: PackedScene = preload("res://HitEffects/effect_player.tscn")
 var _player: Wizard
 var _camera_shake: CameraShake
 
@@ -44,6 +46,21 @@ func shoot():
 	var did_shoot = bullet_spawner.trigger_bullet_spawn()
 	if not did_shoot: 
 		return
+	_play_effect(_wand_resource.shoot_effect)
+	_shake_camera()
+
+func _shake_camera():
 	if _camera_shake == null:
 		return
 	_camera_shake.shake_camera(_wand_resource.camera_shake)
+
+func _play_effect(effect: HitEffectAttributes):
+	var tree = get_tree()
+	if tree == null: 
+		# level already finished
+		return
+	var player: HitEffectPlayer = _effect_player.instantiate()
+	tree.root.add_child(player)
+	player.global_position = global_position
+	player.global_rotation = global_rotation
+	player.play(effect, self)
