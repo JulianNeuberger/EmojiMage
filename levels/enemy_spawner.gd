@@ -26,7 +26,6 @@ func kill_enemy(enemy: EnemyBehavior):
 
 func spawn_enemies():
 	var player = get_tree().get_nodes_in_group("player")[0]
-	
 	for enemy_spawn in enemy_spawns:
 		for i in range(enemy_spawn.amount):
 			var enemy: EnemyBehavior = enemy_spawn.enemy.instantiate()

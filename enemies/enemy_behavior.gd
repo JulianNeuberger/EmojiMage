@@ -57,4 +57,6 @@ func _process(delta):
 func set_target(target: Node2D):
 	for child in $Behaviors.get_children():
 		child.target = target
+		if child is SmackBehavior:
+			child.set_target(target)
 

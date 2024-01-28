@@ -7,14 +7,8 @@
 [node name="Node2D" parent="." instance=ExtResource("1_cdnrs")]
 position = Vector2(926, 98)
 
-[node name="KeepDistanceBehavior" parent="Node2D/Behaviors" index="0"]
-shooting_distance = 200.0
-
 [node name="Node2D2" parent="." instance=ExtResource("1_cdnrs")]
 position = Vector2(928, 265)
-
-[node name="KeepDistanceBehavior" parent="Node2D2/Behaviors" index="0"]
-shooting_distance = 200.0
 
 [editable path="Node2D"]
 [editable path="Node2D2"]
