@@ -54,3 +54,6 @@ radius = 50.0
 
 [node name="Wizard" parent="." index="3"]
 position = Vector2(559, 429)
+
+[node name="GrantRewardComponent" parent="." index="5"]
+wand_reward = null

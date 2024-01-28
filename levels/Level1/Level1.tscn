@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://tcy11xrasqu7"]
+[gd_scene load_steps=8 format=3 uid="uid://tcy11xrasqu7"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_do4df"]
 [ext_resource type="PackedScene" uid="uid://b2qx5ocdrljpo" path="res://levels/Level1/Level1_TileMap.tscn" id="2_0j77i"]
 [ext_resource type="PackedScene" uid="uid://ruyutunnue0k" path="res://torch/Torch.tscn" id="3_foqi3"]
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="3_jynjj"]
 [ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="4_0jggc"]
+[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="5_yamsl"]
 
 [sub_resource type="Resource" id="Resource_s4boi"]
 script = ExtResource("4_0jggc")
@@ -24,6 +25,9 @@ radius = 200.0
 
 [node name="Wizard" parent="." index="2"]
 position = Vector2(491, 299)
+
+[node name="GrantRewardComponent" parent="." index="4"]
+wand_reward = ExtResource("5_yamsl")
 
 [node name="Torch" parent="." index="9" instance=ExtResource("3_foqi3")]
 position = Vector2(414, 341)

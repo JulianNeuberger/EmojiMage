@@ -32,6 +32,9 @@ radius = 40.0
 [node name="Wizard" parent="." index="2"]
 position = Vector2(542, 323)
 
+[node name="GrantRewardComponent" parent="." index="4"]
+wand_reward = null
+
 [node name="Torch" parent="." index="10" instance=ExtResource("3_ttgde")]
 position = Vector2(84, 101)
 
