@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8mai678ndn2a"]
+[gd_scene load_steps=9 format=3 uid="uid://c8mai678ndn2a"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_bd6o0"]
 [ext_resource type="PackedScene" uid="uid://6c3nf4fxf2v7" path="res://levels/Level2/Level2_TileMap.tscn" id="2_uqmxt"]
 [ext_resource type="PackedScene" uid="uid://ruyutunnue0k" path="res://torch/Torch.tscn" id="3_noc0b"]
+[ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="3_uxbyq"]
+[ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="4_5nwog"]
+[ext_resource type="PackedScene" uid="uid://cl0gewu048p07" path="res://enemies/SmackEnemy.tscn" id="5_mrte8"]
+
+[sub_resource type="Resource" id="Resource_g8d2l"]
+script = ExtResource("4_5nwog")
+enemy = ExtResource("3_uxbyq")
+amount = 10
+delay = 1.5
+
+[sub_resource type="Resource" id="Resource_xxrqh"]
+script = ExtResource("4_5nwog")
+enemy = ExtResource("5_mrte8")
+amount = 5
+delay = 2.0
 
 [node name="LevelPrototype" instance=ExtResource("1_bd6o0")]
 level_name = "Level2"
@@ -10,7 +25,8 @@ level_name = "Level2"
 [node name="Level2TileMap" parent="." index="0" instance=ExtResource("2_uqmxt")]
 
 [node name="EnemySpawner" parent="." index="1"]
-position = Vector2(762, 110)
+position = Vector2(788, 263)
+enemy_spawns = Array[ExtResource("4_5nwog")]([SubResource("Resource_g8d2l"), SubResource("Resource_xxrqh")])
 radius = 50.0
 
 [node name="Wizard" parent="." index="2"]

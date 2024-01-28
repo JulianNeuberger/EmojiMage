@@ -1,15 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl0gewu048p07"]
+[gd_scene load_steps=8 format=3 uid="uid://cl0gewu048p07"]
 
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="1_x28kx"]
 [ext_resource type="Script" path="res://enemies/smack_behavior.gd" id="2_76imf"]
 [ext_resource type="Texture2D" uid="uid://cneubwxj2um3r" path="res://Wand/wand_0.png" id="3_imwgi"]
+[ext_resource type="Texture2D" uid="uid://n0ge0duiy8ei" path="res://enemies/Snat .png" id="4_8iqld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g2jn"]
+atlas = ExtResource("4_8iqld")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv6q5"]
+atlas = ExtResource("4_8iqld")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwboe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g2jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv6q5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SmackEnemy" instance=ExtResource("1_x28kx")]
 
 [node name="SmackBehavior" type="Node" parent="Behaviors" index="0" node_paths=PackedStringArray("movement")]
 script = ExtResource("2_76imf")
 movement = NodePath("../../EnemyMovement")
+smacking_distance = 40.0
+
+[node name="EnemyMovement" parent="." index="2"]
+movement_per_sec = 7.0
 
 [node name="StickSprite" type="Sprite2D" parent="." index="5"]
 position = Vector2(12, 19)
 texture = ExtResource("3_imwgi")
+
+[node name="AnimatedSprite2D" parent="." index="9"]
+sprite_frames = SubResource("SpriteFrames_xwboe")
+frame_progress = 0.0

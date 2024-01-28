@@ -1,47 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6vereo7ojcbl"]
+[gd_scene load_steps=7 format=3 uid="uid://c6vereo7ojcbl"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_e8ced"]
 [ext_resource type="PackedScene" uid="uid://bk2upo2wjq21f" path="res://levels/Level5/Level5_TileMap.tscn" id="2_7ohj6"]
 [ext_resource type="PackedScene" uid="uid://ruyutunnue0k" path="res://torch/Torch.tscn" id="3_ycr5p"]
+[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="4_oh66f"]
+[ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="5_kqlcj"]
+
+[sub_resource type="Resource" id="Resource_penag"]
+script = ExtResource("5_kqlcj")
+enemy = ExtResource("4_oh66f")
+amount = 15
+delay = 0.5
 
 [node name="LevelPrototype" instance=ExtResource("1_e8ced")]
 level_name = "Level5"
 
 [node name="Level5TileMap" parent="." index="0" instance=ExtResource("2_7ohj6")]
 
-[node name="EnemySpawner" parent="." index="1"]
-position = Vector2(1062, 310)
-radius = 50.0
+[node name="Torch" parent="." index="1" instance=ExtResource("3_ycr5p")]
+position = Vector2(846, 162)
 
-[node name="Torch" parent="EnemySpawner" index="0" instance=ExtResource("3_ycr5p")]
-position = Vector2(-216, -148)
-
-[node name="Torch" parent="EnemySpawner/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(-305, -13)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(-273, 38)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(-137, 159)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(24, 184)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(173, 148)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(267, 48)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(295, -30)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(173, -152)
 
-[node name="Torch" parent="EnemySpawner/Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
+[node name="Torch" parent="Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch/Torch" index="3" instance=ExtResource("3_ycr5p")]
 position = Vector2(5, -259)
 
-[node name="Wizard" parent="." index="2"]
-position = Vector2(583, 208)
+[node name="EnemySpawner" parent="." index="2"]
+position = Vector2(1055, 425)
+enemy_spawns = Array[ExtResource("5_kqlcj")]([SubResource("Resource_penag")])
+radius = 50.0
+
+[node name="Wizard" parent="." index="3"]
+position = Vector2(559, 429)

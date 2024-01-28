@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmddgc4p4tad2"]
+[gd_scene load_steps=5 format=3 uid="uid://bmddgc4p4tad2"]
 
+[ext_resource type="Texture2D" uid="uid://cp0247hyll3hw" path="res://HealthBar/health_bar_under.png" id="1_2awn8"]
 [ext_resource type="Script" path="res://HealthBar/HealthBar.gd" id="1_2654w"]
+[ext_resource type="Texture2D" uid="uid://4rj11gmcsp67" path="res://HealthBar/health_bar_over.png" id="2_nkv45"]
+[ext_resource type="Texture2D" uid="uid://cds621fiqi5hy" path="res://HealthBar/health_bar_progress.png" id="3_dbb45"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhoyn"]
-bg_color = Color(0.313726, 0.313726, 0.313726, 0.47451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g82pf"]
-bg_color = Color(0.737255, 0.305882, 0.188235, 1)
-
-[node name="HealthBar" type="ProgressBar"]
+[node name="HealthBar" type="TextureProgressBar"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,9 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/background = SubResource("StyleBoxFlat_vhoyn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_g82pf")
-step = 1.0
 value = 60.0
-show_percentage = false
+nine_patch_stretch = true
+texture_under = ExtResource("1_2awn8")
+texture_over = ExtResource("2_nkv45")
+texture_progress = ExtResource("3_dbb45")
 script = ExtResource("1_2654w")

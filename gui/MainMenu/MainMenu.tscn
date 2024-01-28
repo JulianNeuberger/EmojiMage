@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="3_kqct5"]
 [ext_resource type="Texture2D" uid="uid://bfseachgjnu31" path="res://Assets/Logo_text.png" id="3_pxloh"]
 [ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="4_f2iow"]
+[ext_resource type="Texture2D" uid="uid://cboyv83wg5gfm" path="res://EmojiSprites/laughing.png" id="4_obohm"]
 [ext_resource type="PackedScene" uid="uid://if6mc66q2ou6" path="res://gui/Transitions/GUIFade.tscn" id="5_3q78q"]
 [ext_resource type="Texture2D" uid="uid://bffmycn0i0vh4" path="res://EmojiSprites/droplets_emoji.png" id="5_t4ogd"]
 [ext_resource type="PackedScene" uid="uid://ct4udox2r2r15" path="res://PlayerInputs/PlayerMainMenuHandler.tscn" id="5_wghs4"]
 [ext_resource type="PackedScene" uid="uid://b3tq33mb1kgvc" path="res://gui/Blackout/Blackout.tscn" id="6_hqk2h"]
 [ext_resource type="Texture2D" uid="uid://cc6d4eh24eihf" path="res://EmojiSprites/hand_emoji.png" id="6_jsjrt"]
-[ext_resource type="Texture2D" uid="uid://cypji13qwvmi" path="res://bullet/bullet.png" id="7_0fgk2"]
 [ext_resource type="PackedScene" uid="uid://c1l2vwe0etc7j" path="res://gui/LogoEmojis/logo_emoji.tscn" id="7_82fjn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhi1t"]
@@ -91,7 +91,7 @@ offset_left = 91.0
 offset_top = -6.5
 offset_right = 131.0
 offset_bottom = 33.5
-emoji_texture = ExtResource("7_0fgk2")
+emoji_texture = ExtResource("4_obohm")
 duration = 0.8
 offset = -12
 
