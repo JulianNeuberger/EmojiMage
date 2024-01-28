@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 class_name HealthBar 
 
 @export var can_turn_invisible = true

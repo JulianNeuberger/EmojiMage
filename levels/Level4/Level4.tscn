@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://736ti5hvh5p8"]
+[gd_scene load_steps=9 format=3 uid="uid://736ti5hvh5p8"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_0ax7t"]
 [ext_resource type="PackedScene" uid="uid://bj83rswlebc8t" path="res://levels/Level4/Level4_TileMap.tscn" id="2_c6egt"]
+[ext_resource type="PackedScene" uid="uid://cl0gewu048p07" path="res://enemies/SmackEnemy.tscn" id="3_06o5x"]
 [ext_resource type="PackedScene" uid="uid://ruyutunnue0k" path="res://torch/Torch.tscn" id="3_ttgde"]
+[ext_resource type="Script" path="res://levels/enemy_spawn.gd" id="4_0msl8"]
+[ext_resource type="PackedScene" uid="uid://b5dwvdvynsnak" path="res://enemies/ShootingEnemy.tscn" id="5_jf50g"]
+
+[sub_resource type="Resource" id="Resource_8g385"]
+script = ExtResource("4_0msl8")
+enemy = ExtResource("3_06o5x")
+amount = 10
+delay = 0.5
+
+[sub_resource type="Resource" id="Resource_somha"]
+script = ExtResource("4_0msl8")
+enemy = ExtResource("5_jf50g")
+amount = 5
+delay = 1.0
 
 [node name="LevelPrototype" instance=ExtResource("1_0ax7t")]
 level_name = "Level4"
@@ -10,8 +25,9 @@ level_name = "Level4"
 [node name="Level4TileMap" parent="." index="0" instance=ExtResource("2_c6egt")]
 
 [node name="EnemySpawner" parent="." index="1"]
-position = Vector2(564, -46)
-radius = 50.0
+position = Vector2(334, -67)
+enemy_spawns = Array[ExtResource("4_0msl8")]([SubResource("Resource_8g385"), SubResource("Resource_somha")])
+radius = 40.0
 
 [node name="Wizard" parent="." index="2"]
 position = Vector2(542, 323)

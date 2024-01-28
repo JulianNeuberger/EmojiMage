@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5dwvdvynsnak"]
+[gd_scene load_steps=11 format=3 uid="uid://b5dwvdvynsnak"]
 
 [ext_resource type="PackedScene" uid="uid://40mhhmhiflb6" path="res://enemies/basic_enemy.tscn" id="1_7jbie"]
 [ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_6fp3k"]
 [ext_resource type="PackedScene" uid="uid://0xf4of3jet5g" path="res://BulletSpawner/BulletSpawner.tscn" id="2_nbwol"]
 [ext_resource type="Resource" uid="uid://cnheatqa4gn3h" path="res://bullet/EnemyBullet.tres" id="4_fwtm7"]
+[ext_resource type="Texture2D" uid="uid://u1xfa2457qb7" path="res://enemies/Derroteman.png" id="5_0lugs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yrsg"]
+atlas = ExtResource("5_0lugs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkiwr"]
+atlas = ExtResource("5_0lugs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi22x"]
+atlas = ExtResource("5_0lugs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkh16"]
+atlas = ExtResource("5_0lugs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbayv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yrsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkiwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi22x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkh16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="ShootingEnemy" instance=ExtResource("1_7jbie")]
 
@@ -18,3 +55,7 @@ bullet_spread = 2.08165e-12
 bullets_per_shot = 1
 bullet_speed_variance = 0
 shots_per_second = 2
+
+[node name="AnimatedSprite2D" parent="." index="9"]
+sprite_frames = SubResource("SpriteFrames_dbayv")
+frame_progress = 0.0

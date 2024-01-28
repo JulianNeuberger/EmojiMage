@@ -146,7 +146,6 @@ shape = SubResource("CircleShape2D_mipyo")
 path_desired_distance = 10.0
 radius = 64.0
 avoidance_priority = 0.0
-debug_enabled = true
 
 [node name="HealthBar" parent="." instance=ExtResource("8_3fifs")]
 z_index = 1

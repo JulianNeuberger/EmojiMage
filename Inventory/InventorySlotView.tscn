@@ -14,14 +14,20 @@ grow_vertical = 2
 script = ExtResource("1_0j2b8")
 
 [node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_w2x2r")
+expand_mode = 2
 
 [node name="BackgroundActive" type="TextureRect" parent="."]
 visible = false
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("3_g7su5")
+expand_mode = 2
 
 [node name="Item" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_eyp86")
+expand_mode = 2

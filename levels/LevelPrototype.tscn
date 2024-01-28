@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4k0qbuyf82jb"]
+[gd_scene load_steps=29 format=3 uid="uid://b4k0qbuyf82jb"]
 
 [ext_resource type="Script" path="res://levels/testbed.gd" id="1_qd80f"]
 [ext_resource type="Script" path="res://levels/enemy_spawner.gd" id="3_vn323"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://xmuma7eni4" path="res://wizard/Wizard.tscn" id="7_dsit8"]
 [ext_resource type="Script" path="res://Inventory/Inventory.gd" id="8_vk6dh"]
 [ext_resource type="Resource" uid="uid://bc88g3b5f0yd5" path="res://Wand/DefaultWand.tres" id="9_o0dcd"]
-[ext_resource type="Resource" uid="uid://bsluy5wxafj5e" path="res://Wand/ShotgunWand.tres" id="10_fawyv"]
 [ext_resource type="PackedScene" uid="uid://c37uaabrvavc0" path="res://Inventory/InventoryView.tscn" id="11_bw6ml"]
 [ext_resource type="PackedScene" uid="uid://c7wkav8ts6g4a" path="res://Utils/PauseGame.tscn" id="12_qjeoc"]
 [ext_resource type="PackedScene" uid="uid://b100d4col6tvy" path="res://gui/GUIToggle/GUIToggle.tscn" id="13_17fkv"]
@@ -40,7 +39,7 @@ delay = 0.3
 
 [sub_resource type="Resource" id="Resource_7xwms"]
 script = ExtResource("8_vk6dh")
-slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("9_o0dcd"), ExtResource("10_fawyv")])
+slots = Array[Resource("res://Wand/WandResource.gd")]([ExtResource("9_o0dcd")])
 max_slots = 3
 
 [sub_resource type="Environment" id="Environment_4imda"]
@@ -75,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 25
 
 [node name="InventoryView" parent="CanvasLayer/MarginContainer" instance=ExtResource("11_bw6ml")]
 layout_mode = 2
@@ -130,6 +129,7 @@ environment = SubResource("Environment_4imda")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_t25wh")
+volume_db = -20.0
 autoplay = true
 
 [connection signal="on_all_killed" from="EnemySpawner" to="GrantRewardComponent" method="grant_reward"]
