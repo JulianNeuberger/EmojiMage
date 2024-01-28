@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mtb8yt4lkat0"
-path="res://.godot/imported/blood_splatter.png-41cd3b266779f7cdc2787496679639fd.ctex"
+path="res://.godot/imported/blood_splatter.png-d26d1edc7ab17b281b4fccf04f9c5eee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/HitEffects/blood_splatter.png"
-dest_files=["res://.godot/imported/blood_splatter.png-41cd3b266779f7cdc2787496679639fd.ctex"]
+source_file="res://HitEffects/blood_splatter.png"
+dest_files=["res://.godot/imported/blood_splatter.png-d26d1edc7ab17b281b4fccf04f9c5eee.ctex"]
 
 [params]
 

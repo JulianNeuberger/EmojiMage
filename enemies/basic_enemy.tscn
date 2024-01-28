@@ -1,27 +1,30 @@
-[gd_scene load_steps=25 format=3 uid="uid://40mhhmhiflb6"]
+[gd_scene load_steps=24 format=3 uid="uid://40mhhmhiflb6"]
 
 [ext_resource type="Texture2D" uid="uid://dx2xj7ge3315r" path="res://enemies/test_enemy.png" id="1_da2xf"]
 [ext_resource type="Script" path="res://enemies/enemy_behavior.gd" id="1_mfs7k"]
 [ext_resource type="Script" path="res://enemies/shoot_behavior.gd" id="2_2k8q2"]
-[ext_resource type="AudioStream" uid="uid://d23745x2ph5x2" path="res://enemies/HitEffects/hit1.ogg" id="2_2v165"]
-[ext_resource type="PackedScene" uid="uid://vyhtspfs0t6l" path="res://enemies/HitEffects/effect_player.tscn" id="2_jxbah"]
+[ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://HitEffects/blood_splatter.png" id="2_cn7vn"]
 [ext_resource type="Script" path="res://enemies/enemy_movement.gd" id="2_r0u5n"]
-[ext_resource type="Script" path="res://enemies/HitEffects/HitEffectAttributes.gd" id="2_vady1"]
-[ext_resource type="Texture2D" uid="uid://mtb8yt4lkat0" path="res://enemies/HitEffects/blood_splatter.png" id="3_8kdva"]
 [ext_resource type="Script" path="res://enemies/follow_behavior.gd" id="3_8krj1"]
+[ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="3_ktggs"]
 [ext_resource type="Script" path="res://health.gd" id="4_2tfas"]
+[ext_resource type="AudioStream" uid="uid://d23745x2ph5x2" path="res://HitEffects/hit1.ogg" id="4_vm0qp"]
 [ext_resource type="PackedScene" uid="uid://d4iucbq7sk0ny" path="res://HitAndHurtBox/HurtBox.tscn" id="6_eiel0"]
 [ext_resource type="PackedScene" uid="uid://bmddgc4p4tad2" path="res://HealthBar/HealthBar.tscn" id="8_3fifs"]
 [ext_resource type="Texture2D" uid="uid://b38nctpj8gxrb" path="res://enemies/Rollemy.png" id="9_cecxc"]
 
 [sub_resource type="Resource" id="Resource_kto2i"]
-script = ExtResource("2_vady1")
-sounds = Array[AudioStream]([ExtResource("2_2v165")])
+script = ExtResource("3_ktggs")
+sounds = Array[AudioStream]([ExtResource("4_vm0qp")])
 pitch_variation = 0.3
-particle_texture = ExtResource("3_8kdva")
-particle_emit_duration = 0.15
+particle_texture = ExtResource("2_cn7vn")
+particle_emit_duration = 0.0
 particle_color = Color(0.431373, 0, 0, 1)
-flash_duration = 0.02
+particle_amount = 5
+particle_explosiveness = 1.0
+particle_frames = 5
+particle_oneshot = true
+flash_duration = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mipyo"]
 
@@ -94,7 +97,6 @@ collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_mfs7k")
-effect_player = ExtResource("2_jxbah")
 hit_effect = SubResource("Resource_kto2i")
 
 [node name="Behaviors" type="Node" parent="."]
@@ -151,4 +153,4 @@ autoplay = "default"
 frame_progress = 0.562595
 
 [connection signal="percentage_changed" from="Health" to="HealthBar" method="set_percentage"]
-[connection signal="trigger" from="HurtBox" to="Health" method="damage"]
+[connection signal="trigger" from="HurtBox" to="Health" method="receive_hurt_box_damage"]

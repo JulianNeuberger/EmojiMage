@@ -27,7 +27,7 @@ func _process(delta):
 	if collided:
 		queue_free()
 
-func on_bullet_hit(target: HurtBox):
+func on_bullet_hit(target: HurtBox, _direction: Vector2):
 	#animation
 	queue_free()
 
