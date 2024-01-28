@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://tcy11xrasqu7"]
+[gd_scene load_steps=4 format=3 uid="uid://tcy11xrasqu7"]
 
 [ext_resource type="PackedScene" uid="uid://b4k0qbuyf82jb" path="res://levels/LevelPrototype.tscn" id="1_do4df"]
 [ext_resource type="PackedScene" uid="uid://b2qx5ocdrljpo" path="res://levels/Level1/Level1_TileMap.tscn" id="2_0j77i"]
+[ext_resource type="PackedScene" uid="uid://ruyutunnue0k" path="res://torch/Torch.tscn" id="3_foqi3"]
 
 [node name="LevelPrototype" instance=ExtResource("1_do4df")]
 level_name = "Level1"
@@ -14,3 +15,18 @@ radius = 80.0
 
 [node name="Wizard" parent="." index="2"]
 position = Vector2(491, 299)
+
+[node name="Torch" parent="." index="9" instance=ExtResource("3_foqi3")]
+position = Vector2(414, 341)
+
+[node name="Torch5" parent="." index="10" instance=ExtResource("3_foqi3")]
+position = Vector2(781, 61)
+
+[node name="Torch2" parent="." index="11" instance=ExtResource("3_foqi3")]
+position = Vector2(8, 52)
+
+[node name="Torch3" parent="." index="12" instance=ExtResource("3_foqi3")]
+position = Vector2(148, 471)
+
+[node name="Torch4" parent="." index="13" instance=ExtResource("3_foqi3")]
+position = Vector2(750, 298)

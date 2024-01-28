@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://ruyutunnue0k"]
+
+[ext_resource type="Script" path="res://torch/Torch.gd" id="1_2vnfj"]
+[ext_resource type="Texture2D" uid="uid://d3ow3bugjr0c1" path="res://torch/torch_grandiant_texture.tres" id="1_d3fiv"]
+[ext_resource type="Texture2D" uid="uid://bwwl7brs72fcf" path="res://Assets/torch.png" id="3_s0jpe"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5203e"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx38h"]
+atlas = ExtResource("3_s0jpe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6aww"]
+atlas = ExtResource("3_s0jpe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4fe2"]
+atlas = ExtResource("3_s0jpe")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2wny"]
+atlas = ExtResource("3_s0jpe")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brnas"]
+atlas = ExtResource("3_s0jpe")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kh3yu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx38h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6aww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4fe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2wny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brnas")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch" type="Node2D"]
+script = ExtResource("1_2vnfj")
+min_radius = 6.8
+max_radius = 7.2
+
+[node name="ShadowLight" type="PointLight2D" parent="."]
+color = Color(0.776471, 0.501961, 0.368627, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("1_d3fiv")
+texture_scale = 7.0
+
+[node name="AmbientLight" type="PointLight2D" parent="."]
+color = Color(0.8, 0.627451, 0.478431, 1)
+energy = 0.5
+texture = ExtResource("1_d3fiv")
+texture_scale = 7.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_5203e")
+sprite_frames = SubResource("SpriteFrames_kh3yu")
+autoplay = "default"
+frame_progress = 0.538327
