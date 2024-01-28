@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwwdulk3xaiao"]
+[gd_scene load_steps=8 format=3 uid="uid://bwwdulk3xaiao"]
 
 [ext_resource type="Script" path="res://gui/ShopScene/ShopScene.gd" id="1_c32wt"]
 [ext_resource type="PackedScene" uid="uid://dr5u5xtga7hix" path="res://levels/LevelOrchestrator/LevelOrchestrator.tscn" id="2_f0tpr"]
+[ext_resource type="Texture2D" uid="uid://cg8ujgmfastg" path="res://Assets/images/Princess.png" id="3_eyidj"]
 [ext_resource type="PackedScene" uid="uid://if6mc66q2ou6" path="res://gui/Transitions/GUIFade.tscn" id="3_xnlsg"]
+[ext_resource type="Texture2D" uid="uid://dtdrwcwi3w3jv" path="res://Assets/images/Mage.png" id="4_2um7a"]
 [ext_resource type="PackedScene" uid="uid://b3tq33mb1kgvc" path="res://gui/Blackout/Blackout.tscn" id="4_gxgdv"]
+[ext_resource type="PackedScene" uid="uid://c1l2vwe0etc7j" path="res://gui/LogoEmojis/logo_emoji.tscn" id="5_eeq2l"]
 
 [node name="ShopScene" type="Node2D"]
 script = ExtResource("1_c32wt")
@@ -12,19 +15,113 @@ script = ExtResource("1_c32wt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+[node name="CenterContainer" type="Control" parent="CanvasLayer"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Ok" type="Button" parent="CanvasLayer/CenterContainer"]
 custom_minimum_size = Vector2(120, 2.08165e-12)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 202.0
+offset_right = 60.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Next Level"
 
+[node name="Chars" type="Control" parent="CanvasLayer/CenterContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 151.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrincessAnimation" parent="CanvasLayer/CenterContainer/Chars" instance=ExtResource("5_eeq2l")]
+offset_left = -196.0
+offset_top = -133.0
+offset_right = -156.0
+offset_bottom = -93.0
+min_radius = 1.5
+max_radius = 1.55
+offset = -5
+
+[node name="Princess" type="TextureRect" parent="CanvasLayer/CenterContainer/Chars/PrincessAnimation"]
+layout_mode = 2
+offset_left = -71.3333
+offset_top = -96.6667
+offset_right = -7.33332
+offset_bottom = -32.6667
+scale = Vector2(3, 3)
+texture = ExtResource("3_eyidj")
+
+[node name="Intro" type="Label" parent="CanvasLayer/CenterContainer/Chars/PrincessAnimation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.3333
+offset_top = -147.333
+offset_right = 497.667
+offset_bottom = -20.3333
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "Oh mighty emoji mage,
+our land is  in  trouble and i fear thou are the only one that can help us. 
+Our people is in deep sorrow and requires a mighty spell from thy grand
+arsenal of magical helpers ... 
+Bring forth your most powerful happy emotion!"
+
+[node name="MageAnimation" parent="CanvasLayer/CenterContainer/Chars" instance=ExtResource("5_eeq2l")]
+offset_left = 118.0
+offset_top = -134.0
+offset_right = 158.0
+offset_bottom = -94.0
+min_radius = 1.5
+max_radius = 1.55
+offset = -5
+
+[node name="Mage" type="TextureRect" parent="CanvasLayer/CenterContainer/Chars/MageAnimation"]
+layout_mode = 2
+offset_left = -71.3333
+offset_top = -96.6667
+offset_right = -7.33332
+offset_bottom = -32.6667
+scale = Vector2(3, 3)
+texture = ExtResource("4_2um7a")
+
+[node name="Level1" type="Label" parent="CanvasLayer/CenterContainer/Chars/MageAnimation"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -490.0
+offset_top = -146.667
+offset_right = 67.0
+offset_bottom = -19.6667
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+text = "I fear I have not yet found the correct spell ... 
+I must delve deeper into my dungeon."
+horizontal_alignment = 2
+
 [node name="GuiFade" parent="CanvasLayer" instance=ExtResource("3_xnlsg")]
+visible = false
 fade_in_duration = 0.3
 fade_out_duration = 0.3
 

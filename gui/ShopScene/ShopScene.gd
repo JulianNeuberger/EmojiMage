@@ -1,9 +1,21 @@
 extends Node2D
 
+var game_saver: GameSaver
+
 
 func _ready():
 	fade_scene_in()
 	$CanvasLayer/CenterContainer/Ok.grab_focus()
+	game_saver = get_node("/root/GameSaver")
+	if game_saver:
+		var level_name = game_saver.get_level_name()
+		if level_name == "null":
+			$CanvasLayer/CenterContainer/Chars/PrincessAnimation/Intro.visible = 1
+			$CanvasLayer/CenterContainer/Chars/MageAnimation/Level1.visible = 0
+		else:
+			$CanvasLayer/CenterContainer/Chars/PrincessAnimation/Intro.visible = 0
+			$CanvasLayer/CenterContainer/Chars/MageAnimation/Level1.visible = 1
+		
 
 
 
