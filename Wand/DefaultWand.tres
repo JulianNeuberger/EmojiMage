@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Wand/WandResource.gd" id="2_wynk6"]
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_yksfe"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_2qwui"]
-[ext_resource type="AudioStream" uid="uid://ckuha3a1hnf4y" path="res://HitEffects/shot.ogg" id="7_djepp"]
+[ext_resource type="AudioStream" uid="uid://bcrjrvmin8ifm" path="res://Assets/sounds/Tschilp.ogg" id="7_k4hkp"]
 [ext_resource type="Texture2D" uid="uid://bqad1ryxi82ik" path="res://EmojiSprites/poop_emoji.png" id="8_cmoxt"]
 
 [sub_resource type="Resource" id="Resource_shu75"]
@@ -17,7 +17,7 @@ intensity = 5.0
 
 [sub_resource type="Resource" id="Resource_ni6xr"]
 script = ExtResource("6_2qwui")
-sounds = Array[AudioStream]([ExtResource("7_djepp")])
+sounds = Array[AudioStream]([ExtResource("7_k4hkp")])
 pitch_variation = 0.1
 particle_texture = ExtResource("5_yksfe")
 particle_emit_duration = 0.0

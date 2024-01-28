@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ivan7v0fyelc" path="res://wizard/run_particles.png" id="5_ioy2t"]
 [ext_resource type="Script" path="res://HitEffects/HitEffectAttributes.gd" id="6_y4j3u"]
 [ext_resource type="Texture2D" uid="uid://cc6d4eh24eihf" path="res://EmojiSprites/hand_emoji.png" id="7_g07nr"]
-[ext_resource type="AudioStream" uid="uid://ckuha3a1hnf4y" path="res://HitEffects/shot.ogg" id="7_wf8jw"]
+[ext_resource type="AudioStream" uid="uid://cm1sx6rdia7rg" path="res://Assets/sounds/Babedi.ogg" id="7_glrha"]
 
 [sub_resource type="Resource" id="Resource_qw1km"]
 script = ExtResource("3_5vrq0")
@@ -17,7 +17,7 @@ intensity = 3.0
 
 [sub_resource type="Resource" id="Resource_x51ns"]
 script = ExtResource("6_y4j3u")
-sounds = Array[AudioStream]([ExtResource("7_wf8jw")])
+sounds = Array[AudioStream]([ExtResource("7_glrha")])
 pitch_variation = 0.1
 particle_texture = ExtResource("5_ioy2t")
 particle_emit_duration = 0.0
